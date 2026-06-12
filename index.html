@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <title>COU Annual Trip 2026 | Commercial Bank</title>
+    <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -16,6 +18,7 @@
             background-color: #f8fafc;
             color: #334155;
             padding-bottom: 60px;
+            overflow-x: hidden;
         }
         
         .app-container {
@@ -25,17 +28,48 @@
             min-height: 100vh;
         }
 
-        /* Header Layout */
+        /* -------------------------------------
+           PREMIUM CSS HARDCODED ANIMATIONS
+        ---------------------------------------- */
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes softGlowPulse {
+            0%, 100% { box-shadow: 0 4px 6px -1px rgba(251, 191, 36, 0.2), 0 2px 4px -1px rgba(251, 191, 36, 0.1); }
+            50% { box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.4), 0 4px 6px -2px rgba(251, 191, 36, 0.2); }
+        }
+
+        /* Official Taj Bentota Destination Background Asset Integration */
         header {
-            background: linear-gradient(to bottom, rgba(15, 43, 70, 0.9), rgba(26, 74, 117, 0.95)), 
-                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80');
+            background: linear-gradient(to bottom, rgba(15, 43, 70, 0.82), rgba(26, 74, 117, 0.9)), 
+                        url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80');
             background-size: cover;
             background-position: center;
             color: #ffffff;
             text-align: center;
-            padding: 35px 20px 30px 20px;
-            border-radius: 0 0 30px 30px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            padding: 40px 20px 35px 20px;
+            border-radius: 0 0 35px 35px;
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.15);
+            animation: scaleIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
         
         .badge-dept {
@@ -44,242 +78,269 @@
             font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
-            padding: 6px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
             color: #99f6e4;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
+            letter-spacing: 0.5px;
         }
         
-        h1 { font-size: 26px; font-weight: 800; margin-bottom: 5px; color: #ffffff; }
-        .amber-txt { color: #fbbf24; }
-        .resort-text { font-size: 14px; color: #cbd5e1; margin-bottom: 15px; }
+        h1 { font-size: 26px; font-weight: 800; margin-bottom: 6px; color: #ffffff; }
+        .amber-txt { color: #fbbf24; font-weight: 800; }
+        .resort-text { font-size: 14px; color: #cbd5e1; margin-bottom: 15px; font-weight: 600; }
 
         /* Countdown Widget */
         .countdown-box {
-            background-color: rgba(15, 23, 42, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 12px;
+            background-color: rgba(15, 23, 42, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            padding: 14px;
             margin: 15px 0;
+            backdrop-filter: blur(8px);
         }
-        .countdown-title { font-size: 11px; text-transform: uppercase; color: #cbd5e1; font-weight: 600; margin-bottom: 8px; }
+        .countdown-title { font-size: 11px; text-transform: uppercase; color: #cbd5e1; font-weight: 700; margin-bottom: 10px; letter-spacing: 0.5px; }
         .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-        .count-card { background: rgba(15, 23, 42, 0.5); padding: 8px; border-radius: 8px; }
-        .count-card span { display: block; font-size: 18px; font-weight: 700; }
-        .count-lbl { font-size: 9px; color: #94a3b8; text-transform: uppercase; }
-        .date-footer { font-size: 11px; color: #cbd5e1; font-style: italic; }
+        .count-card { background: rgba(15, 23, 42, 0.6); padding: 10px 6px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .count-val { display: block; font-size: 20px; font-weight: 800; }
+        .count-lbl { font-size: 9px; color: #a1a1aa; text-transform: uppercase; font-weight: 600; margin-top: 2px; }
+        .date-footer { font-size: 11px; color: #cbd5e1; font-style: italic; margin-top: 4px; }
 
-        /* Content Base elements */
+        /* Content Blocks Content Layout */
         main { padding: 20px 16px; }
         
         .card {
             background: #ffffff;
-            border-radius: 16px;
-            padding: 16px;
-            margin-bottom: 16px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border-radius: 20px;
+            padding: 18px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
             border: 1px solid #e2e8f0;
+            animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
         
-        .motto-card { border-left: 5px solid #fbbf24; }
-        .card-subtitle { font-size: 11px; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin-bottom: 4px; }
-        .card-text { font-size: 14px; color: #334155; font-style: italic; }
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
 
-        /* Map Buttons */
-        .maps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+        .motto-card { border-left: 6px solid #fbbf24; }
+        .card-subtitle { font-size: 11px; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px; }
+        .card-text { font-size: 14px; color: #334155; font-style: italic; line-height: 1.5; }
+
+        /* Map Action Shortcuts */
+        .maps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
         .map-btn {
-            background: #ffffff; border: 1px solid #e2e8f0; padding: 12px; border-radius: 14px;
+            background: #ffffff; border: 1px solid #e2e8f0; padding: 12px; border-radius: 16px;
             display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;
+            transition: transform 0.2s ease;
         }
-        .map-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+        .map-btn:active { transform: scale(0.96); }
+        .map-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
         .btn-ho .map-icon { background: #eff6ff; color: #2563eb; }
         .btn-taj .map-icon { background: #fffbeb; color: #d97706; }
         .map-title { font-size: 13px; font-weight: 700; color: #1e293b; display: block; }
-        .map-desc { font-size: 10px; color: #94a3b8; }
+        .map-desc { font-size: 10px; color: #94a3b8; margin-top: 1px; }
 
-        /* Day Header Layout Separators */
+        /* Day Headers Continuous Layout Stack */
         .day-header {
             background: #0f172a;
             color: #ffffff;
-            padding: 10px 14px;
-            border-radius: 10px;
+            padding: 12px 16px;
+            border-radius: 12px;
             font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 16px;
+            font-weight: 800;
+            margin-bottom: 18px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
         }
-        .day-header span { font-size: 11px; font-weight: 400; opacity: 0.8; }
-        .day-two-space { margin-top: 12px; }
+        .day-header-date { font-size: 11px; font-weight: 600; color: #94a3b8; }
+        .day-two-space { margin-top: 28px; }
 
-        /* Timeline Items Setup */
-        .timeline { border-left: 2px solid #e2e8f0; margin-left: 10px; padding-left: 20px; position: relative; }
-        .time-block { position: relative; margin-bottom: 24px; }
+        /* Timeline Graphics Graphics Engine */
+        .timeline { border-left: 2px solid #e2e8f0; margin-left: 10px; padding-left: 22px; position: relative; }
+        .time-block { position: relative; margin-bottom: 26px; }
         .time-dot {
-            position: absolute; left: -29px; top: 3px; width: 14px; height: 14px;
+            position: absolute; left: -31px; top: 3px; width: 14px; height: 14px;
             background: #0f172a; border: 3px solid #ffffff; border-radius: 50%; box-shadow: 0 0 0 2px #cbd5e1;
         }
-        .time-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+        .time-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
         .time-txt { font-size: 12px; font-weight: 700; color: #64748b; }
-        .badge-type { font-size: 9px; font-weight: 700; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; color: #475569; }
+        .badge-type { font-size: 9px; font-weight: 700; background: #e2e8f0; padding: 2px 7px; border-radius: 5px; color: #475569; }
         .event-title { font-size: 14px; font-weight: 700; color: #0f172a; }
-        .event-desc { font-size: 12px; color: #64748b; margin-top: 2px; }
+        .event-desc { font-size: 12px; color: #64748b; margin-top: 3px; line-height: 1.4; }
         
-        .highlight-block { background: #fffbeb; border: 1px solid #fef3c7; padding: 12px; border-radius: 12px; margin-left: -8px; }
+        /* Premium Highlight Container Card Layout */
+        .highlight-block { 
+            background: #fffbeb; 
+            border: 1px solid #fef3c7; 
+            padding: 14px; 
+            border-radius: 14px; 
+            margin-left: -8px; 
+            animation: softGlowPulse 3s infinite ease-in-out;
+        }
         .highlight-block .time-dot { left: -21px; background: #d97706; }
         .highlight-block .badge-type { background: #fbbf24; color: #78350f; }
-        .party-list { font-size: 12px; color: #475569; margin-top: 6px; padding-left: 16px; list-style-type: disc; }
+        .party-list { font-size: 12px; color: #475569; margin-top: 8px; padding-left: 16px; list-style-type: disc; }
+        .party-list li { margin-bottom: 3px; }
 
-        /* Checklist Components */
-        .check-item { display: flex; align-items: flex-start; gap: 12px; background: #f8fafc; padding: 10px; border-radius: 10px; margin-top: 8px; }
-        .check-item input { width: 16px; height: 16px; margin-top: 2px; accent-color: #0f172a; }
-        .check-text { font-size: 12px; font-weight: 600; color: #475569; }
+        /* Departure Checklist Checkboxes */
+        .check-item { display: flex; align-items: flex-start; gap: 12px; background: #f8fafc; padding: 12px; border-radius: 12px; margin-top: 10px; border: 1px solid #f1f5f9; }
+        .check-item input { width: 18px; height: 18px; margin-top: 1px; accent-color: #0f172a; }
+        .check-text { font-size: 12px; font-weight: 600; color: #475569; line-height: 1.4; }
 
-        .notice-card { background: #0f172a; color: #ffffff; border-radius: 16px; padding: 16px; }
-        .notice-title { font-size: 11px; text-transform: uppercase; color: #fbbf24; font-weight: 700; margin-bottom: 4px; }
+        .notice-card { background: #0f172a; color: #ffffff; border-radius: 20px; padding: 18px; box-shadow: 0 10px 20px rgba(15,23,42,0.05); }
+        .notice-title { font-size: 11px; text-transform: uppercase; color: #fbbf24; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px; }
         .notice-desc { font-size: 12px; color: #cbd5e1; line-height: 1.5; }
 
-        footer { text-align: center; margin-top: 25px; font-size: 10px; color: #94a3b8; }
+        footer { text-align: center; margin-top: 30px; font-size: 11px; color: #94a3b8; font-weight: 500; }
     </style>
 </head>
-<body>
+<body class="notranslate">
 
     <div class="app-container">
+        <!-- HEADER LAYOUT -->
         <header>
-            [span_2](start_span)<div class="badge-dept">Commercial Bank · Centralized Operations Unit[span_2](end_span)</div>
-            [span_3](start_span)<h1>COU Annual Trip <span class="amber-txt">2026</span>[span_3](end_span)</h1>
-            [span_4](start_span)<div class="resort-text"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa[span_4](end_span)</div>
+            <div class="badge-dept">Commercial Bank · Centralized Operations Unit</div>
+            <h1>COU Annual Trip <span class="amber-txt">2026</span></h1>
+            <div class="resort-text"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa</div>
 
+            <!-- Animated Countdown Grid Layout -->
             <div class="countdown-box">
                 <div class="countdown-title">Countdown to Getaway</div>
                 <div class="countdown-grid">
-                    <div class="count-card"><span id="days" style="color: #fbbf24;">00</span><div class="count-lbl">Days</div></div>
-                    <div class="count-card"><span id="hours">00</span><div class="count-lbl">Hours</div></div>
-                    <div class="count-card"><span id="minutes">00</span><div class="count-lbl">Mins</div></div>
-                    <div class="count-card"><span id="seconds" style="color: #f43f5e;">00</span><div class="count-lbl">Secs</div></div>
+                    <div class="count-card"><div class="count-val" id="days" style="color: #fbbf24;">00</div><div class="count-lbl">Days</div></div>
+                    <div class="count-card"><div class="count-val" id="hours">00</div><div class="count-lbl">Hours</div></div>
+                    <div class="count-card"><div class="count-val" id="minutes">00</div><div class="count-lbl">Mins</div></div>
+                    <div class="count-card"><div class="count-val" id="seconds" style="color: #f43f5e;">00</div><div class="count-lbl">Secs</div></div>
                 </div>
             </div>
-            [span_5](start_span)<div class="date-footer">📅 Saturday, 27 June – Sunday, 28 June 2026[span_5](end_span)</div>
+            <div class="date-footer">📅 Saturday, 27 June – Sunday, 28 June 2026</div>
         </header>
 
         <main>
             <div class="card motto-card">
-                [span_6](start_span)<div class="card-subtitle">Our Journey Together[span_6](end_span)</div>
-                [span_7](start_span)<div class="card-text">"Together we work. Together we celebrate. Together we create memories."[span_7](end_span)</div>
+                <div class="card-subtitle">Our Journey Together</div>
+                <div class="card-text">"Together we work. Together we celebrate. Together we create memories."</div>
             </div>
 
+            <!-- MAP ショートカット NAVIGATION GEOLOCATION LINKS -->
             <div class="maps-grid">
-                <a href="https://maps.app.goo.gl/w6f3P4p8xVnZ96Ym8" target="_blank" class="map-btn btn-ho">
+                <a href="https://maps.google.com/?q=Commercial+Bank+Corporate+Branch+Fort+Colombo" target="_blank" class="map-btn btn-ho">
                     <div class="map-icon"><i class="fa-solid fa-bus"></i></div>
-                    [span_8](start_span)<div><span class="map-title">Head Office</span><span class="map-desc">Corporate Branch[span_8](end_span)</span></div>
+                    <div><strong class="map-title">Head Office</strong><div class="map-desc">Corporate Branch</div></div>
                 </a>
-                <a href="https://maps.app.goo.gl/3Xv7B6g4pD9kR1mS8" target="_blank" class="map-btn btn-taj">
+                <a href="https://maps.google.com/?q=Taj+Bentota+Resort+and+Spa" target="_blank" class="map-btn btn-taj">
                     <div class="map-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-                    [span_9](start_span)<div><span class="map-title">Taj Bentota</span><span class="map-desc">Tap for Map[span_9](end_span)</span></div>
+                    <div><strong class="map-title">Taj Bentota</strong><div class="map-desc">Tap for Map</div></div>
                 </a>
             </div>
 
+            <!-- TIMELINE MODULE CARD CONTAINER -->
             <div class="card">
                 
+                <!-- DAY 01 -->
                 <div class="day-header">
-                    [span_10](start_span)<div>☀️ Day 01[span_10](end_span)</div>
-                    [span_11](start_span)<span>Sat, 27 June[span_11](end_span)</span>
+                    <div>☀️ Day 01</div>
+                    <div class="day-header-date">Sat, 27 June</div>
                 </div>
                 
                 <div class="timeline">
                     <div class="time-block">
                         <div class="time-dot"></div>
-                        <div class="time-header-row"><span class="time-txt">08:45 AM</span><span class="badge-type">BU</span></div>
-                        [span_12](start_span)<div class="event-title">Arrival of Transport (Buses)[span_12](end_span)</div>
-                        [span_13](start_span)<div class="event-desc">At Corporate Branch[span_13](end_span).</div>
+                        <div class="time-header-row"><div class="time-txt">08:45 AM</div><div class="badge-type">BU</div></div>
+                        <div class="event-title">Arrival of Transport (Buses)</div>
+                        <div class="event-desc">At Corporate Branch.</div>
                     </div>
                     <div class="time-block">
                         <div class="time-dot"></div>
-                        <div class="time-header-row"><span class="time-txt">09:00 AM</span><span class="badge-type" style="background:#fef3c7; color:#78350f;">GO</span></div>
-                        [span_14](start_span)<div class="event-title">Departure from Head Office[span_14](end_span)</div>
-                        [span_15](start_span)<div class="event-desc">The tropical journey begins with colleagues and families[span_15](end_span).</div>
+                        <div class="time-header-row"><div class="time-txt">09:00 AM</div><div class="badge-type" style="background:#fef3c7; color:#78350f;">GO</div></div>
+                        <div class="event-title">Departure from Head Office</div>
+                        <div class="event-desc">The tropical journey begins with colleagues and families.</div>
                     </div>
                     <div class="time-block">
                         <div class="time-dot"></div>
-                        <div class="time-header-row"><span class="time-txt">11:30 AM</span><span class="badge-type" style="background:#dbeafe; color:#1e40af;">FD</span></div>
-                        [span_16](start_span)<div class="event-title">Lunch Break En Route[span_16](end_span)</div>
-                        [span_17](start_span)<div class="event-desc">Refresh and recharge the crew before reaching the destination resort[span_17](end_span).</div>
+                        <div class="time-header-row"><div class="time-txt">11:30 AM</div><div class="badge-type" style="background:#dbeafe; color:#1e40af;">FD</div></div>
+                        <div class="event-title">Lunch Break En Route</div>
+                        <div class="event-desc">Refresh and recharge the crew before reaching the destination resort.</div>
                     </div>
                     <div class="time-block">
                         <div class="time-dot"></div>
-                        <div class="time-header-row"><span class="time-txt" style="color:#059669;">01:30 PM</span><span class="badge-type" style="background:#d1fae5; color:#065f46;">HT</span></div>
-                        [span_18](start_span)<div class="event-title">Arrival at Taj Bentota Resort & Spa[span_18](end_span)</div>
-                        [span_19](start_span)<div class="event-desc">Welcome to one of Sri Lanka's most pristine, iconic coastal paradises[span_19](end_span).</div>
+                        <div class="time-header-row"><div class="time-txt" style="color:#059669;">01:30 PM</div><div class="badge-type" style="background:#d1fae5; color:#065f46;">HT</div></div>
+                        <div class="event-title">Arrival at Taj Bentota Resort & Spa</div>
+                        <div class="event-desc">Welcome to one of Sri Lanka's most pristine, iconic coastal paradises.</div>
                     </div>
                     <div class="time-block">
                         <div class="time-dot"></div>
-                        <div class="time-header-row"><span class="time-txt">02:00 PM – 02:30 PM</span><span class="badge-type">IN</span></div>
-                        [span_20](start_span)<div class="event-title">Express Check-in & Room Allocation[span_20](end_span)</div>
-                        [span_21](start_span)<div class="event-desc">Quick seamless checking-in to let families unpack and settle down comfortably[span_21](end_span).</div>
+                        <div class="time-header-row"><div class="time-txt">02:00 PM – 02:30 PM</div><div class="badge-type">IN</div></div>
+                        <div class="event-title">Express Check-in & Room Allocation</div>
+                        <div class="event-desc">Quick seamless checking-in to let families unpack and settle down comfortably.</div>
                     </div>
                     <div class="time-block">
                         <div class="time-dot"></div>
-                        <div class="time-header-row"><span class="time-txt" style="color:#06b6d4;">03:00 PM – 05:00 PM</span></div>
-                        [span_22](start_span)<div class="event-title">🌊 Pool Time & Leisure Activities[span_22](end_span)</div>
-                        [span_23](start_span)<div class="event-desc">Relax, unwind, grab your swimsuits, and soak up the tropical beach atmosphere[span_23](end_span).</div>
+                        <div class="time-header-row"><div class="time-txt" style="color:#06b6d4;">03:00 PM – 05:00 PM</div></div>
+                        <div class="event-title">🌊 Pool Time & Leisure Activities</div>
+                        <div class="event-desc">Relax, unwind, grab your swimsuits, and soak up the tropical beach atmosphere.</div>
                     </div>
                     <div class="time-block highlight-block">
                         <div class="time-dot"></div>
-                        <div class="time-header-row"><span class="time-txt" style="color:#b45309;">06:00 PM – 12:00 AM</span><span class="badge-type">Highlight</span></div>
-                        [span_24](start_span)<div class="event-title">🎉 Annual Night & DJ Party[span_24](end_span)</div>
+                        <div class="time-header-row"><div class="time-txt" style="color:#b45309;">06:00 PM – 12:00 AM</div><div class="badge-type">Highlight</div></div>
+                        <div class="event-title">🎉 Annual Night & DJ Party</div>
                         <ul class="party-list">
-                            [span_25](start_span)<li>Welcome Gathering & Soft Music[span_25](end_span)</li>
-                            [span_26](start_span)<li>Grand Dinner Buffet (7:00 PM - 10:00 PM)[span_26](end_span)</li>
-                            [span_27](start_span)<li>Music, High-Energy Dancing & Team Games[span_27](end_span)</li>
+                            <li>Welcome Gathering & Soft Music</li>
+                            <li>Grand Dinner Buffet (7:00 PM - 10:00 PM)</li>
+                            <li>Music, High-Energy Dancing & Team Games</li>
                         </ul>
                     </div>
                 </div>
 
+                <!-- DAY 02 MODULE DISPLAY TRACK -->
                 <div class="day-header day-two-space">
-                    [span_28](start_span)<div>🌴 Day 02[span_28](end_span)</div>
-                    [span_29](start_span)<span>Sun, 28 June[span_29](end_span)</span>
+                    <div>🌴 Day 02</div>
+                    <div class="day-header-date">Sun, 28 June</div>
                 </div>
 
                 <div class="timeline">
                     <div class="time-block">
                         <div class="time-dot"></div>
-                        <div class="time-header-row"><span class="time-txt">07:00 AM – 10:00 AM</span><span class="badge-type" style="background:#ffedd5; color:#c2410c;">BR</span></div>
-                        [span_30](start_span)<div class="event-title">Breakfast Buffet[span_30](end_span)</div>
-                        [span_31](start_span)<div class="event-desc">Wake up relaxed and enjoy a premium heavy breakfast morning spread[span_31](end_span).</div>
+                        <div class="time-header-row"><div class="time-txt">07:00 AM – 10:00 AM</div><div class="badge-type" style="background:#ffedd5; color:#c2410c;">BR</div></div>
+                        <div class="event-title">Breakfast Buffet</div>
+                        <div class="event-desc">Wake up relaxed and enjoy a premium heavy breakfast morning spread.</div>
                     </div>
                     <div class="time-block" style="background: #f0fdfa; border: 1px solid #ccfbf1; padding: 12px; border-radius: 12px; margin-left: -8px;">
                         <div class="time-dot" style="left:-21px; background:#0d9488;"></div>
-                        <div class="time-header-row"><span class="time-txt" style="color:#0f766e;">10:00 AM – 12:00 PM</span><span class="badge-type" style="background:#ccfbf1; color:#115e59;">FN</span></div>
-                        [span_32](start_span)<div class="event-title">🏆 Family Fun Morning[span_32](end_span)</div>
-                        <div class="event-desc" style="color:#115e59; font-weight:500;">Team Bonding Games | Kid Challenges | [span_33](start_span)Interactive Entertainment & Major Prize Giveaway Session[span_33](end_span).</div>
+                        <div class="time-header-row"><div class="time-txt" style="color:#0f766e;">10:00 AM – 12:00 PM</div><div class="badge-type" style="background:#ccfbf1; color:#115e59;">FN</div></div>
+                        <div class="event-title">🏆 Family Fun Morning</div>
+                        <div class="event-desc" style="color:#115e59; font-weight:500;">Team Bonding Games | Kid Challenges | Interactive Entertainment & Major Prize Giveaway Session.</div>
                     </div>
                     <div class="time-block">
                         <div class="time-dot" style="background:#e11d48;"></div>
-                        <div class="time-header-row"><span class="time-txt" style="color:#e11d48;">12:00 PM</span><span class="badge-type" style="background:#ffe4e6; color:#9f1239;">CO</span></div>
-                        [span_34](start_span)<div class="event-title">Hotel Check-out[span_34](end_span)</div>
-                        [span_35](start_span)<div class="event-desc">Please check all drawers, chargers, and complete luggage gathering[span_35](end_span).</div>
+                        <div class="time-header-row"><div class="time-txt" style="color:#e11d48;">12:00 PM</div><div class="badge-type" style="background:#ffe4e6; color:#9f1239;">CO</div></div>
+                        <div class="event-title">Hotel Check-out</div>
+                        <div class="event-desc">Please check all drawers, chargers, and complete luggage gathering.</div>
                     </div>
                     <div class="time-block">
                         <div class="time-dot"></div>
-                        <div class="time-header-row"><span class="time-txt">12:00 PM – 02:30 PM</span><span class="badge-type" style="background:#dbeafe; color:#1e40af;">LN</span></div>
-                        [span_36](start_span)<div class="event-title">Farewell Lunch[span_36](end_span)</div>
-                        [span_37](start_span)<div class="event-desc">Enjoy one final luxury community meal together before packing buses[span_37](end_span).</div>
+                        <div class="time-header-row"><div class="time-txt">12:00 PM – 02:30 PM</div><div class="badge-type" style="background:#dbeafe; color:#1e40af;">LN</div></div>
+                        <div class="event-title">Farewell Lunch</div>
+                        <div class="event-desc">Enjoy one final luxury community meal together before packing buses.</div>
                     </div>
                     <div class="time-block">
                         <div class="time-dot" style="background:#d97706;"></div>
-                        <div class="time-header-row"><span class="time-txt">02:30 PM – 03:00 PM</span><span class="badge-type" style="background:#fef3c7; color:#78350f;">GO</span></div>
-                        [span_38](start_span)<div class="event-title">Departure from Hotel[span_38](end_span)</div>
-                        [span_39](start_span)<div class="event-desc">The return journey back to corporate headquarters begins[span_39](end_span).</div>
+                        <div class="time-header-row"><div class="time-txt">02:30 PM – 03:00 PM</div><div class="badge-type" style="background:#fef3c7; color:#78350f;">GO</div></div>
+                        <div class="event-title">Departure from Hotel</div>
+                        <div class="event-desc">The return journey back to corporate headquarters begins.</div>
                     </div>
                 </div>
 
             </div>
 
+            <!-- CHECKLIST INTERACTION SYSTEM -->
             <div class="card">
                 <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
                     <i class="fa-solid fa-clipboard-check" style="color: #e11d48; font-size: 16px;"></i>
-                    [span_40](start_span)<div class="event-title">Day 02 Departure Checklist[span_40](end_span)</div>
+                    <div class="event-title">Day 02 Departure Checklist</div>
                 </div>
                 <div class="event-desc" style="margin-bottom: 12px;">Tap items to check off your exit tasks smoothly:</div>
                 
@@ -293,36 +354,8 @@
                 </div>
                 <div class="check-item">
                     <input type="checkbox" id="c3">
-                    [span_41](start_span)<label for="c3" class="check-text">Collect family baggage bags and check in with your transport captain[span_41](end_span)</label>
+                    <label for="c3" class="check-text">Collect family baggage bags and check in with your transport captain</label>
                 </div>
             </div>
 
-            <div class="notice-card">
-                <div class="notice-title">Trip Support Notice</div>
-                <div class="notice-desc">Need assistance, seat adjustments, or medical/family logistics support along the route? Touch base directly with the onsite COU Organizing committee members immediately.</div>
-            </div>
-        </main>
-
-        <footer>
-            [span_42](start_span)<p>© 2026 Commercial Bank Centralized Operations Unit[span_42](end_span)</p>
-            [span_43](start_span)<p style="color: #cbd5e1; margin-top: 4px;">Together We Celebrate[span_43](end_span)</p>
-        </footer>
-    </div>
-
-    <script>
-        function initCountdown() {
-            var targetDate = new Date("June 27, 2026 08:45:00").getTime();
-
-            setInterval(function() {
-                var now = new Date().getTime();
-                var distance = targetDate - now;
-
-                if (distance < 0) {
-                    document.getElementById('days').innerText = "00";
-                    document.getElementById('hours').innerText = "00";
-                    document.getElementById('minutes').innerText = "00";
-                    document.getElementById('seconds').innerText = "00";
-                    return;
-                }
-
-                var d = 
+            <!-- ASSISTANCE F
