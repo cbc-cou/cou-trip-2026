@@ -4,378 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
-    <title>COU Annual Trip 2026 | Commercial Bank</title>
-    <!-- FontAwesome for icons -->
+    <title>COU Annual Trip 2026</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
-        
-        /* Core Reset */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #f8fafc;
-            color: #334155;
-            padding-bottom: 60px;
-            overflow-x: hidden;
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f8fafc; color: #334155; padding-bottom: 40px; }
+        .wrapper { max-width: 450px; margin: 0 auto; background: #f8fafc; min-height: 100vh; }
         
-        .app-container {
-            max-width: 450px;
-            margin: 0 auto;
-            background-color: #f8fafc;
-            min-height: 100vh;
-        }
-
-        /* Premium CSS Micro-Animations */
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes subtleScale {
-            from { opacity: 0; transform: scale(0.96); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes glowPulse {
-            0%, 100% { box-shadow: 0 4px 6px -1px rgba(251, 191, 36, 0.15); }
-            50% { box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.35); }
-        }
-
-        /* Official Premium Taj Resort Background Image Background Styling */
         header {
-            background: linear-gradient(to bottom, rgba(15, 43, 70, 0.74), rgba(26, 74, 117, 0.86)), 
-                        url('https://cdn.sanity.io/images/ocl5w36p/ihcl_prod/cc5b137db63129a16d9368c44f7f642611a74455-1720x1112.jpg?w=480&auto=format&dpr=2');
-            background-size: cover;
-            background-position: center;
-            color: #ffffff;
-            text-align: center;
-            padding: 40px 20px 35px 20px;
-            border-radius: 0 0 35px 35px;
-            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.15);
-            animation: subtleScale 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+            background: linear-gradient(to bottom, rgba(15, 43, 70, 0.75), rgba(26, 74, 117, 0.88)), url('https://cdn.sanity.io/images/ocl5w36p/ihcl_prod/cc5b137db63129a16d9368c44f7f642611a74455-1720x1112.jpg?w=480&auto=format&dpr=2');
+            background-size: cover; background-position: center; color: #fff; text-align: center; padding: 35px 20px; border-radius: 0 0 30px 30px;
         }
+        .tag { display: inline-block; background: rgba(255,255,255,0.15); font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; color: #99f6e4; margin-bottom: 10px; }
+        h1 { font-size: 24px; font-weight: 800; }
+        .gold { color: #fbbf24; }
+        .sub { font-size: 13px; color: #cbd5e1; margin: 5px 0 15px; }
         
-        .badge-dept {
-            display: inline-block;
-            background-color: rgba(255, 255, 255, 0.15);
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 6px 14px;
-            border-radius: 20px;
-            color: #99f6e4;
-            margin-bottom: 14px;
-            letter-spacing: 0.5px;
-        }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; text-align: left; }
+        .box { display: flex; align-items: center; gap: 8px; background: rgba(15,23,42,0.45); padding: 8px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); }
+        .box i { color: #fbbf24; font-size: 12px; }
+        .b-lbl { font-size: 8px; color: #a1a1aa; text-transform: uppercase; font-weight: 700; }
+        .b-val { font-size: 11px; font-weight: 700; }
         
-        h1 { font-size: 26px; font-weight: 800; margin-bottom: 6px; color: #ffffff; }
-        .amber-txt { color: #fbbf24; font-weight: 800; }
-        .resort-text { font-size: 14px; color: #cbd5e1; margin-bottom: 15px; font-weight: 600; }
-
-        /* Experience Highlights Matrix Dashboard Card */
-        .trip-status-box {
-            background-color: rgba(15, 23, 42, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 18px;
-            padding: 12px;
-            margin: 16px 0;
-            backdrop-filter: blur(8px);
-            text-align: left;
-        }
-        .status-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-        }
-        .status-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(15, 23, 42, 0.4);
-            padding: 8px 10px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-        }
-        .status-icon {
-            color: #fbbf24;
-            font-size: 14px;
-            width: 16px;
-            text-align: center;
-        }
-        .status-details {
-            display: flex;
-            flex-direction: column;
-        }
-        .status-label {
-            font-size: 9px;
-            color: #a1a1aa;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-        }
-        .status-value {
-            font-size: 11px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-top: 1px;
-        }
-        .date-footer { font-size: 11px; color: #cbd5e1; font-style: italic; margin-top: 4px; }
-
-        /* Main App Layout */
-        main { padding: 20px 16px; }
+        main { padding: 16px; }
+        .card { background: #fff; border-radius: 16px; padding: 16px; margin-bottom: 14px; border: 1px solid #e2e8f0; }
+        .m-card { border-left: 5px solid #fbbf24; font-style: italic; font-size: 14px; }
         
-        .card {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 18px;
-            margin-bottom: 18px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-            border: 1px solid #e2e8f0;
-            animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
-        }
+        .lnks { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+        .lnk-btn { background: #fff; border: 1px solid #e2e8f0; padding: 10px; border-radius: 12px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit; }
+        .lnk-btn i { width: 30px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .b-blue i { background: #eff6ff; color: #2563eb; }
+        .b-gold i { background: #fffbeb; color: #d97706; }
         
-        .motto-card { border-left: 6px solid #fbbf24; }
-        .card-subtitle { font-size: 11px; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin-bottom: 6px; }
-        .card-text { font-size: 14px; color: #334155; font-style: italic; line-height: 1.5; }
-
-        /* Maps Redirect Grid Layout */
-        .maps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
-        .map-btn {
-            background: #ffffff; border: 1px solid #e2e8f0; padding: 12px; border-radius: 16px;
-            display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;
-        }
-        .map-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
-        .btn-ho .map-icon { background: #eff6ff; color: #2563eb; }
-        .btn-taj .map-icon { background: #fffbeb; color: #d97706; }
-
-        /* Timelines Blocks Setup */
-        .day-header {
-            background: #0f172a;
-            color: #ffffff;
-            padding: 12px 16px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 800;
-            margin-bottom: 18px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .day-header-date { font-size: 11px; font-weight: 600; color: #94a3b8; }
-        .day-two-space { margin-top: 28px; }
-
-        .timeline { border-left: 2px solid #e2e8f0; margin-left: 10px; padding-left: 22px; position: relative; }
-        .time-block { position: relative; margin-bottom: 26px; }
-        .time-dot {
-            position: absolute; left: -31px; top: 3px; width: 14px; height: 14px;
-            background: #0f172a; border: 3px solid #ffffff; border-radius: 50%; box-shadow: 0 0 0 2px #cbd5e1;
-        }
-        .time-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
-        .time-txt { font-size: 12px; font-weight: 700; color: #64748b; }
-        .badge-type { font-size: 9px; font-weight: 700; background: #e2e8f0; padding: 2px 7px; border-radius: 5px; color: #475569; }
-        .event-title { font-size: 14px; font-weight: 700; color: #0f172a; }
-        .event-desc { font-size: 12px; color: #64748b; margin-top: 3px; line-height: 1.4; }
+        .d-hd { background: #0f172a; color: #fff; padding: 10px 14px; border-radius: 10px; font-size: 13px; font-weight: 800; display: flex; justify-content: space-between; margin: 15px 0 12px; }
+        .tl { border-left: 2px solid #e2e8f0; margin-left: 8px; padding-left: 18px; position: relative; }
+        .item { position: relative; margin-bottom: 20px; }
+        .dot { position: absolute; left: -26px; top: 3px; width: 12px; height: 12px; background: #0f172a; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 2px #cbd5e1; }
+        .i-hd { display: flex; justify-content: space-between; margin-bottom: 3px; font-size: 11px; font-weight: 700; color: #64748b; }
+        .badge { font-size: 9px; background: #e2e8f0; padding: 1px 5px; border-radius: 4px; color: #475569; }
+        .i-tl { font-size: 13px; font-weight: 700; color: #0f172a; }
+        .i-ds { font-size: 12px; color: #64748b; margin-top: 2px; }
         
-        .highlight-block { 
-            background: #fffbeb; 
-            border: 1px solid #fef3c7; 
-            padding: 14px; 
-            border-radius: 14px; 
-            margin-left: -8px; 
-            animation: glowPulse 3s infinite ease-in-out;
-        }
-        .highlight-block .time-dot { left: -21px; background: #d97706; }
-        .highlight-block .badge-type { background: #fbbf24; color: #78350f; }
-        .party-list { font-size: 12px; color: #475569; margin-top: 8px; padding-left: 16px; list-style-type: disc; }
-        .party-list li { margin-bottom: 3px; }
-
-        /* Checklist Fields Rows Layout */
-        .check-item { display: flex; align-items: flex-start; gap: 12px; background: #f8fafc; padding: 12px; border-radius: 12px; margin-top: 10px; border: 1px solid #f1f5f9; }
-        .check-item input { width: 18px; height: 18px; margin-top: 1px; accent-color: #0f172a; }
-        .check-text { font-size: 12px; font-weight: 600; color: #475569; line-height: 1.4; }
-
-        /* Upgraded Directory Call Cards Layout */
-        .notice-card { background: #0f172a; color: #ffffff; border-radius: 20px; padding: 18px; }
-        .notice-title { font-size: 12px; text-transform: uppercase; color: #fbbf24; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.5px; }
-        .support-link-item {
-            display: flex; align-items: center; justify-content: space-between; 
-            background: rgba(255, 255, 255, 0.07); padding: 10px 12px; border-radius: 12px; 
-            text-decoration: none; color: #ffffff; margin-bottom: 8px; border: 1px solid rgba(255, 255, 255, 0.03);
-        }
-        .support-link-item:last-child { margin-bottom: 0; }
-        .support-link-item:active { background: rgba(255, 255, 255, 0.15); }
-        .support-left-block { display: flex; align-items: center; gap: 12px; }
-        .support-meta-title { font-size: 13px; font-weight: 700; display: block; }
-        .support-meta-desc { font-size: 10px; color: #cbd5e1; margin-top: 1px; display: block; }
-
-        footer { text-align: center; margin-top: 30px; font-size: 11px; color: #94a3b8; font-weight: 500; }
+        .hl { background: #fffbeb; border: 1px solid #fef3c7; padding: 12px; border-radius: 12px; margin-left: -6px; }
+        .hl .dot { left: -19px; background: #d97706; }
+        .hl .badge { background: #fbbf24; color: #78350f; }
+        .lst { font-size: 12px; color: #475569; margin: 6px 0 0 14px; }
+        
+        .chk { display: flex; gap: 10px; background: #f8fafc; padding: 10px; border-radius: 10px; margin-top: 8px; font-size: 12px; font-weight: 600; color: #475569; }
+        .alert { border-left: 5px solid #ef4444; background: #fef2f2; }
+        .a-title { color: #dc2626; font-size: 11px; font-weight: 800; margin-bottom: 6px; }
+        .a-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: #dc2626; color: #fff; text-decoration: none; padding: 10px; border-radius: 10px; font-size: 13px; font-weight: 700; box-shadow: 0 4px 6px rgba(220,38,38,0.15); }
+        .a-sub { font-size: 9px; color: #7f1d1d; text-align: center; margin-top: 4px; font-weight: 700; }
+        
+        .dir { background: #0f172a; color: #fff; border-radius: 16px; padding: 14px; margin-bottom: 14px; }
+        .d-row { display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.06); padding: 8px 12px; border-radius: 10px; text-decoration: none; color: #fff; margin-top: 8px; font-size: 12px; }
+        
+        footer { text-align: center; font-size: 10px; color: #94a3b8; margin-top: 20px; }
     </style>
 </head>
 <body class="notranslate">
-
-    <div class="app-container">
-        <!-- HEADER LAYOUT -->
+    <div class="wrapper">
         <header>
-            <div class="badge-dept">Commercial Bank · Centralized Operations Unit</div>
-            <h1>COU Annual Trip <div class="amber-txt">2026</div></h1>
-            <div class="resort-text"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa</div>
-
-            <!-- Upgraded Experience Matrix Highlights Widget Block -->
+            <div class="tag">Commercial Bank · COU</div>
+            <h1>COU Annual Trip <span class="gold">2026</span></h1>
+            <div class="sub"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa</div>
             <div class="trip-status-box">
-                <div class="status-grid">
-                    <div class="status-item">
-                        <i class="fa-solid fa-calendar-day status-icon"></i>
-                        <div class="status-details">
-                            <div class="status-label">Duration</div>
-                            <div class="status-value">2 Days / 1 Night</div>
-                        </div>
-                    </div>
-                    <div class="status-item">
-                        <i class="fa-solid fa-umbrella-beach status-icon"></i>
-                        <div class="status-details">
-                            <div class="status-label">Destination</div>
-                            <div class="status-value">Bentota Coast</div>
-                        </div>
-                    </div>
-                    <div class="status-item">
-                        <i class="fa-solid fa-champagne-glasses status-icon"></i>
-                        <div class="status-details">
-                            <div class="status-label">Day 1 Focus</div>
-                            <div class="status-value">DJ Gala Night</div>
-                        </div>
-                    </div>
-                    <div class="status-item">
-                        <i class="fa-solid fa-trophy status-icon"></i>
-                        <div class="status-details">
-                            <div class="status-label">Day 2 Focus</div>
-                            <div class="status-value">Family Games</div>
-                        </div>
-                    </div>
+                <div class="grid">
+                    <div class="box"><i class="fa-solid fa-calendar-day"></i><div><div class="b-lbl">Duration</div><div class="b-val">2 Days / 1 Night</div></div></div>
+                    <div class="box"><i class="fa-solid fa-umbrella-beach"></i><div><div class="b-lbl">Destination</div><div class="b-val">Bentota Coast</div></div></div>
+                    <div class="box"><i class="fa-solid fa-champagne-glasses"></i><div><div class="b-lbl">Day 1 Focus</div><div class="b-val">DJ Gala Night</div></div></div>
+                    <div class="box"><i class="fa-solid fa-trophy"></i><div><div class="b-lbl">Day 2 Focus</div><div class="b-val">Family Games</div></div></div>
                 </div>
             </div>
-            <div class="date-footer">📅 Saturday, 27 June – Sunday, 28 June 2026</div>
         </header>
 
         <main>
-            <!-- WORK MOTTO DESK -->
-            <div class="card motto-card">
-                <div class="card-subtitle">Our Journey Together</div>
-                <div class="card-text">"Together we work. Together we celebrate. Together we create memories."</div>
+            <div class="card m-card">
+                "Together we work. Together we celebrate. Together we create memories."
             </div>
 
-            <!-- MAP SEAT CONNECTIONS EXPLICIT LINKS -->
-            <div class="maps-grid">
-                <a href="https://maps.google.com/?q=Commercial+Bank+Corporate+Branch+Fort+Colombo" target="_blank" class="map-btn btn-ho">
-                    <div class="map-icon"><i class="fa-solid fa-bus"></i></div>
-                    <div><div style="font-size: 13px; font-weight: 700; color: #1e293b;">Head Office</div><div class="map-desc">Corporate Branch</div></div>
+            <div class="lnks">
+                <a href="https://maps.google.com/?q=Commercial+Bank+Corporate+Branch+Colombo+Fort" target="_blank" class="lnk-btn b-blue">
+                    <i class="fa-solid fa-bus"></i>
+                    <div><div style="font-size:12px; font-weight:700;">Head Office</div><div style="font-size:9px; color:#94a3b8;">Corporate Branch</div></div>
                 </a>
-                <a href="https://maps.google.com/?q=Taj+Bentota+Resort+and+Spa" target="_blank" class="map-btn btn-taj">
-                    <div class="map-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-                    <div><div style="font-size: 13px; font-weight: 700; color: #1e293b;">Taj Bentota</div><div class="map-desc">Tap for Map</div></div>
+                <a href="https://maps.google.com/?q=Taj+Bentota+Resort+Spa+Sri+Lanka" target="_blank" class="lnk-btn b-gold">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <div><div style="font-size:12px; font-weight:700;">Taj Bentota</div><div style="font-size:9px; color:#94a3b8;">Tap for Map</div></div>
                 </a>
             </div>
 
-            <!-- INTEGRATED SINGLE STREAM TIMELINE -->
             <div class="card">
-                
-                <!-- DAY 01 TRACK CONTENT -->
-                <div class="day-header">
-                    <div>☀️ Day 01</div>
-                    <div class="day-header-date">Sat, 27 June</div>
-                </div>
-                
-                <div class="timeline">
-                    <div class="time-block">
-                        <div class="time-dot"></div>
-                        <div class="time-header-row"><div class="time-txt">08:45 AM</div><div class="badge-type">BU</div></div>
-                        <div class="event-title">Arrival of Transport (Buses)</div>
-                        <div class="event-desc">At Corporate Branch.</div>
-                    </div>
-                    <div class="time-block">
-                        <div class="time-dot"></div>
-                        <div class="time-header-row"><div class="time-txt">09:00 AM</div><div class="badge-type" style="background:#fef3c7; color:#78350f;">GO</div></div>
-                        <div class="event-title">Departure from Head Office</div>
-                        <div class="event-desc">The tropical journey begins with colleagues and families.</div>
-                    </div>
-                    <div class="time-block">
-                        <div class="time-dot"></div>
-                        <div class="time-header-row"><div class="time-txt">11:30 AM</div><div class="badge-type" style="background:#dbeafe; color:#1e40af;">FD</div></div>
-                        <div class="event-title">Lunch Break En Route</div>
-                        <div class="event-desc">Refresh and recharge the crew before reaching the destination resort.</div>
-                    </div>
-                    <div class="time-block">
-                        <div class="time-dot"></div>
-                        <div class="time-header-row"><div class="time-txt" style="color:#059669;">01:30 PM</div><div class="badge-type" style="background:#d1fae5; color:#065f46;">HT</div></div>
-                        <div class="event-title">Arrival at Taj Bentota Resort & Spa</div>
-                        <div class="event-desc">Welcome to one of Sri Lanka's most pristine, iconic coastal paradises.</div>
-                    </div>
-                    <div class="time-block">
-                        <div class="time-dot"></div>
-                        <div class="time-header-row"><div class="time-txt">02:00 PM – 02:30 PM</div><div class="badge-type">IN</div></div>
-                        <div class="event-title">Express Check-in & Room Allocation</div>
-                        <div class="event-desc">Quick seamless checking-in to let families unpack and settle down comfortably.</div>
-                    </div>
-                    <div class="time-block">
-                        <div class="time-dot"></div>
-                        <div class="time-header-row"><div class="time-txt" style="color:#06b6d4;">03:00 PM – 05:00 PM</div></div>
-                        <div class="event-title">🌊 Pool Time & Leisure Activities</div>
-                        <div class="event-desc">Relax, unwind, grab your swimsuits, and soak up the tropical beach atmosphere.</div>
-                    </div>
-                    <div class="time-block highlight-block">
-                        <div class="time-dot"></div>
-                        <div class="time-header-row"><div class="time-txt" style="color:#b45309;">06:00 PM – 12:00 AM</div><div class="badge-type">Highlight</div></div>
-                        <div class="event-title">🎉 Annual Night & DJ Party</div>
-                        <ul class="party-list">
-                            <li>Welcome Gathering & Soft Music</li>
-                            <li>Grand Dinner Buffet (7:00 PM - 10:00 PM)</li>
-                            <li>Music, High-Energy Dancing & Team Games</li>
-                        </ul>
-                    </div>
+                <div class="d-hd"><div>☀️ Day 01</div><div>Sat, 27 June</div></div>
+                <div class="tl">
+                    <div class="item"><div class="dot"></div><div class="i-hd"><div>08:45 AM</div><div class="badge">BU</div></div><div class="i-tl">Arrival of Transport</div><div class="i-ds">Buses at Corporate Branch.</div></div>
+                    <div class="item"><div class="dot"></div><div class="i-hd"><div>09:00 AM</div><div class="badge">GO</div></div><div class="i-tl">Departure from Head Office</div><div class="i-ds">The tropical journey begins.</div></div>
+                    <div class="item"><div class="dot"></div><div class="i-hd"><div>11:30 AM</div><div class="badge">FD</div></div><div class="i-tl">Lunch Break En Route</div><div class="i-ds">Refresh and recharge the crew.</div></div>
+                    <div class="item"><div class="dot"></div><div class="i-hd" style="color:#059669;"><div>01:30 PM</div><div class="badge" style="background:#d1fae5; color:#065f46;">HT</div></div><div class="i-tl">Arrival at Taj Bentota</div><div class="i-ds">Welcome to pristine coastal paradise.</div></div>
+                    <div class="item"><div class="dot"></div><div class="i-hd"><div>02:00 PM – 02:30 PM</div><div class="badge">IN</div></div><div class="i-tl">Express Check-in</div><div class="i-ds">Room allocation and settling in.</div></div>
+                    <div class="item"><div class="dot"></div><div class="i-hd" style="color:#06b6d4;"><div>03:00 PM – 05:00 PM</div></div><div class="i-tl">Pool Time & Leisure</div><div class="i-ds">Relax and soak in the atmosphere.</div></div>
+                    <div class="item hl"><div class="dot"></div><div class="i-hd" style="color:#b45309;"><div>06:00 PM – 12:00 AM</div><div class="badge">Highlight</div></div><div class="i-tl">Annual Night & DJ Party</div><ul class="lst"><li>Welcome Gathering & Soft Music</li><li>Dinner Buffet (7:00 PM - 10:00 PM)</li><li>Dancing & Team Bonding</li></ul></div>
                 </div>
 
-                <!-- DAY 02 DISPLAY TRACK CONTENT -->
-                <div class="day-header day-two-space">
-                    <div>🌴 Day 02</div>
-                    <div class="day-header-date">Sun, 28 June</div>
+                <div class="d-hd" style="margin-top:25px;"><div>🌴 Day 02</div><div>Sun, 28 June</div></div>
+                <div class="tl">
+                    <div class="item"><div class="dot"></div><div class="i-hd"><div>07:00 AM – 10:00 AM</div><div class="badge">BR</div></div><div class="i-tl">Breakfast Buffet</div><div class="i-ds">Relaxed morning resort breakfast spread.</div></div>
+                    <div class="item" style="background:#f0fdfa; border:1px solid #ccfbf1; padding:10px; border-radius:10px; margin-left:-6px;"><div class="dot" style="left:-19px; background:#0d9488;"></div><div class="i-hd" style="color:#0f766e;"><div>10:00 AM – 12:00 PM</div><div class="badge" style="background:#ccfbf1; color:#115e59;">FN</div></div><div class="i-tl">Family Fun Morning</div><div class="i-ds" style="color:#115e59;">Team Games, Family Challenges & Prizes.</div></div>
+                    <div class="item"><div class="dot" style="background:#e11d48;"></div><div class="i-hd" style="color:#e11d48;"><div>12:00 PM</div><div class="badge">CO</div></div><div class="i-tl">Hotel Check-out</div><div class="i-ds">Ensure all personal belongings are collected.</div></div>
+                    <div class="item"><div class="dot"></div><div class="i-hd"><div>12:00 PM – 02:30 PM</div><div class="badge">LN</div></div><div class="i-tl">Farewell Lunch</div><div class="i-ds">One final luxury community meal together.</div></div>
+                    <div class="item"><div class="dot" style="background:#d97706;"></div><div class="i-hd"><div>02:30 PM – 03:00 PM</div><div class="badge">GO</div></div><div class="i-tl">Departure from Hotel</div><div class="i-ds">Return journey back to corporate headquarters.</div></div>
                 </div>
-
-                <div class="timeline">
-                    <div class="time-block">
-                        <div class="time-dot"></div>
-                        <div class="time-header-row"><div class="time-txt">07:00 AM – 10:00 AM</div><div class="badge-type" style="background:#ffedd5; color:#c2410c;">BR</div></div>
-                        <div class="event-title">Breakfast Buffet</div>
-                        <div class="event-desc">Wake up relaxed and enjoy a premium heavy breakfast morning spread.</div>
-                    </div>
-                    <div class="time-block" style="background: #f0fdfa; border: 1px solid #ccfbf1; padding: 12px; border-radius: 12px; margin-left: -8px;">
-                        <div class="time-dot" style="left:-21px; background:#0d9488;"></div>
-                        <div class="time-header-row"><div class="time-txt" style="color:#0f766e;">10:00 AM – 12:00 PM</div><div class="badge-type" style="background:#ccfbf1; color:#115e59;">FN</div></div>
-                        <div class="event-title">🏆 Family Fun Morning</div>
-                        <div class="event-desc" style="color:#115e59; font-weight:500;">Team Bonding Games | Kid Challenges | Interactive Entertainment & Major Prize Giveaway Session.</div>
-                    </div>
-                    <div class="time-block">
-                        <div class="time-dot" style="background:#e11d48;"></div>
-                        <div class="time-header-row"><div class="time-txt" style="color:#e11d48;">12:00 PM</div><div class="badge-type" style="background:#ffe4e6; color:#9f1239;">CO</div></div>
-                        <div class="event-title">Hotel Check-out</div>
-                        <div class="event-desc">Please check all drawers, chargers, and complete luggage gathering.</div>
-                    </div>
-                    <div class="time-block">
-                        <div class="time-dot"></div>
-                        <div class="time-header-row"><div class="time-txt">12:00 PM – 02:30 PM</div><div class="badge-type" style="background:#dbeafe; color:#1e40af;">LN</div></div>
-                        <div class="event-title">Farewell Lunch</div>
-                        <div class="event-desc">Enjoy one final luxury community meal together before packing buses.</div>
-                    </div>
-                    <div class="time-block">
-                        <div class="time-dot" style="background:#d97706;"></div>
-                        <div class="time-header-row"><div class="time-txt">02:30 PM – 03:00 PM</div><div class="badge-type" style="background:#fef3c7; color:#78350f;">GO</div></div>
-                        <div class="event-title">Departure from Hotel</div>
-                        <div class="event-desc">The return journey back to corporate headquarters begins.</div>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- CHECKLIST FIELDS -->
             <div class="card">
-                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-                    
+                <div style="display:flex; align-items:center; gap:6px; margin-bottom:6px;"><i class="fa-solid fa-clipboard-check" style="color:#e11d48;"></i><div class="i-tl">Day 02 Departure Checklist</div></div>
+                <div class="chk"><input type="checkbox" id="k1"><label for="k1">Double-check wall outlets for phone chargers</label></div>
+                <div class="chk"><input type="checkbox" id="k2"><label for="k2">Clear auxiliary room bills at Front Desk</label></div>
+                <div class="chk"><input type="checkbox" id="k3"><label for="k3">Collect family baggage bags and check in</label></div>
+            </div>
+
+            <div class="dir">
+                <div style="font-size:11px; text-transform:uppercase; color:#fbbf24; font-weight:700; margin-bottom:6px;">Service Helplines</div>
+                <a href="tel:0342275000" class="d-row"><div><strong>Taj Bentota Reception</strong><div style="font-size:9px; color:#cbd5e1; margin-top:2px;">Hotel operator front desk desk</div></div><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="tel:0768300754" class="d-row"><div><strong>On-Route Logistics Help</strong><div style="font-size:9px; color:#cbd5e1; margin-top:2px;">First-aid box & bus allocations</div></div><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+
+            <div class="card alert">
+                <div class="a-title"><i class="fa-solid fa-circle-exclamation"></i> IN CASE OF EMERGENCY</div>
+                <div class="i-ds" style="margin-bottom:10px; font-weight:500; color:#4b5563;">For urgent medical needs, delays, or immediate support:</div>
+                <a href="tel:+94777488137" class="a-btn"><i class="fa-solid fa-phone-flip"></i> Call Malaka Premathilake</a>
+                <div class="a-sub">President - Sports Club</div>
+            </div>
+        </main>
+
+        <footer>
+            <div>© 2026 Commercial Bank Centralized Operations Unit</div>
+            <div style="margin-top:2px;">Together We Celebrate</div>
+        </footer>
+    </div>
+</body>
+</html>
