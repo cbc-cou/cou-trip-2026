@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
     <title>COU Annual Trip 2026 | Commercial Bank</title>
-    <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -28,39 +27,23 @@
             min-height: 100vh;
         }
 
-        /* -------------------------------------
-           PREMIUM CSS HARDCODED ANIMATIONS
-        ---------------------------------------- */
-        @keyframes slideUpFade {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Premium CSS Micro-Animations */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes subtleScale {
+            from { opacity: 0; transform: scale(0.96); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 4px 6px -1px rgba(251, 191, 36, 0.15); }
+            50% { box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.35); }
         }
 
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes softGlowPulse {
-            0%, 100% { box-shadow: 0 4px 6px -1px rgba(251, 191, 36, 0.2), 0 2px 4px -1px rgba(251, 191, 36, 0.1); }
-            50% { box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.4), 0 4px 6px -2px rgba(251, 191, 36, 0.2); }
-        }
-
-        /* Official Taj Bentota Destination Background Asset Integration */
+        /* Official Premium Taj Resort Background Image */
         header {
-            background: linear-gradient(to bottom, rgba(15, 43, 70, 0.82), rgba(26, 74, 117, 0.9)), 
+            background: linear-gradient(to bottom, rgba(15, 43, 70, 0.75), rgba(26, 74, 117, 0.88)), 
                         url('https://cdn.sanity.io/images/ocl5w36p/ihcl_prod/cc5b137db63129a16d9368c44f7f642611a74455-1720x1112.jpg?w=480&auto=format&dpr=2');
             background-size: cover;
             background-position: center;
@@ -69,7 +52,7 @@
             padding: 40px 20px 35px 20px;
             border-radius: 0 0 35px 35px;
             box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.15);
-            animation: scaleIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation: subtleScale 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
         
         .badge-dept {
@@ -89,10 +72,10 @@
         .amber-txt { color: #fbbf24; font-weight: 800; }
         .resort-text { font-size: 14px; color: #cbd5e1; margin-bottom: 15px; font-weight: 600; }
 
-        /* Countdown Widget */
+        /* Countdown Widget Grid */
         .countdown-box {
-            background-color: rgba(15, 23, 42, 0.45);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background-color: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 18px;
             padding: 14px;
             margin: 15px 0;
@@ -100,12 +83,12 @@
         }
         .countdown-title { font-size: 11px; text-transform: uppercase; color: #cbd5e1; font-weight: 700; margin-bottom: 10px; letter-spacing: 0.5px; }
         .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-        .count-card { background: rgba(15, 23, 42, 0.6); padding: 10px 6px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .count-card { background: rgba(15, 23, 42, 0.5); padding: 10px 6px; border-radius: 10px; }
         .count-val { display: block; font-size: 20px; font-weight: 800; }
         .count-lbl { font-size: 9px; color: #a1a1aa; text-transform: uppercase; font-weight: 600; margin-top: 2px; }
         .date-footer { font-size: 11px; color: #cbd5e1; font-style: italic; margin-top: 4px; }
 
-        /* Content Blocks Content Layout */
+        /* Main Elements Content Body Layout */
         main { padding: 20px 16px; }
         
         .card {
@@ -113,35 +96,28 @@
             border-radius: 20px;
             padding: 18px;
             margin-bottom: 18px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
             border: 1px solid #e2e8f0;
-            animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
         
-        .card:nth-child(1) { animation-delay: 0.1s; }
-        .card:nth-child(2) { animation-delay: 0.2s; }
-        .card:nth-child(3) { animation-delay: 0.3s; }
-        .card:nth-child(4) { animation-delay: 0.4s; }
-
         .motto-card { border-left: 6px solid #fbbf24; }
-        .card-subtitle { font-size: 11px; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px; }
+        .card-subtitle { font-size: 11px; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin-bottom: 6px; }
         .card-text { font-size: 14px; color: #334155; font-style: italic; line-height: 1.5; }
 
-        /* Map Action Shortcuts */
+        /* Action Maps Shortcuts Navigation Buttons */
         .maps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
         .map-btn {
             background: #ffffff; border: 1px solid #e2e8f0; padding: 12px; border-radius: 16px;
             display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;
-            transition: transform 0.2s ease;
         }
-        .map-btn:active { transform: scale(0.96); }
         .map-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
         .btn-ho .map-icon { background: #eff6ff; color: #2563eb; }
         .btn-taj .map-icon { background: #fffbeb; color: #d97706; }
         .map-title { font-size: 13px; font-weight: 700; color: #1e293b; display: block; }
         .map-desc { font-size: 10px; color: #94a3b8; margin-top: 1px; }
 
-        /* Day Headers Continuous Layout Stack */
+        /* Day Separator Dividers */
         .day-header {
             background: #0f172a;
             color: #ffffff;
@@ -153,12 +129,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
         }
         .day-header-date { font-size: 11px; font-weight: 600; color: #94a3b8; }
         .day-two-space { margin-top: 28px; }
 
-        /* Timeline Graphics Graphics Engine */
+        /* Unified Timeline Tree Styling */
         .timeline { border-left: 2px solid #e2e8f0; margin-left: 10px; padding-left: 22px; position: relative; }
         .time-block { position: relative; margin-bottom: 26px; }
         .time-dot {
@@ -171,42 +146,40 @@
         .event-title { font-size: 14px; font-weight: 700; color: #0f172a; }
         .event-desc { font-size: 12px; color: #64748b; margin-top: 3px; line-height: 1.4; }
         
-        /* Premium Highlight Container Card Layout */
+        /* Special Row Highlights for DJ Night Card */
         .highlight-block { 
             background: #fffbeb; 
             border: 1px solid #fef3c7; 
             padding: 14px; 
             border-radius: 14px; 
             margin-left: -8px; 
-            animation: softGlowPulse 3s infinite ease-in-out;
+            animation: glowPulse 3s infinite ease-in-out;
         }
         .highlight-block .time-dot { left: -21px; background: #d97706; }
         .highlight-block .badge-type { background: #fbbf24; color: #78350f; }
         .party-list { font-size: 12px; color: #475569; margin-top: 8px; padding-left: 16px; list-style-type: disc; }
         .party-list li { margin-bottom: 3px; }
 
-        /* Departure Checklist Checkboxes */
+        /* Checklist Fields Rows Layout */
         .check-item { display: flex; align-items: flex-start; gap: 12px; background: #f8fafc; padding: 12px; border-radius: 12px; margin-top: 10px; border: 1px solid #f1f5f9; }
         .check-item input { width: 18px; height: 18px; margin-top: 1px; accent-color: #0f172a; }
         .check-text { font-size: 12px; font-weight: 600; color: #475569; line-height: 1.4; }
 
-        .notice-card { background: #0f172a; color: #ffffff; border-radius: 20px; padding: 18px; box-shadow: 0 10px 20px rgba(15,23,42,0.05); }
-        .notice-title { font-size: 11px; text-transform: uppercase; color: #fbbf24; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px; }
+        .notice-card { background: #0f172a; color: #ffffff; border-radius: 20px; padding: 18px; }
+        .notice-title { font-size: 11px; text-transform: uppercase; color: #fbbf24; font-weight: 700; margin-bottom: 6px; }
         .notice-desc { font-size: 12px; color: #cbd5e1; line-height: 1.5; }
 
         footer { text-align: center; margin-top: 30px; font-size: 11px; color: #94a3b8; font-weight: 500; }
     </style>
 </head>
-<body class="notranslate">
+<body>
 
     <div class="app-container">
-        <!-- HEADER LAYOUT -->
         <header>
             <div class="badge-dept">Commercial Bank · Centralized Operations Unit</div>
-            <h1>COU Annual Trip <span class="amber-txt">2026</span></h1>
+            <h1>COU Annual Trip <div class="amber-txt">2026</div></h1>
             <div class="resort-text"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa</div>
 
-            <!-- Animated Countdown Grid Layout -->
             <div class="countdown-box">
                 <div class="countdown-title">Countdown to Getaway</div>
                 <div class="countdown-grid">
@@ -225,22 +198,19 @@
                 <div class="card-text">"Together we work. Together we celebrate. Together we create memories."</div>
             </div>
 
-            <!-- MAP ショートカット NAVIGATION GEOLOCATION LINKS -->
             <div class="maps-grid">
                 <a href="https://maps.google.com/?q=Commercial+Bank+Corporate+Branch+Fort+Colombo" target="_blank" class="map-btn btn-ho">
                     <div class="map-icon"><i class="fa-solid fa-bus"></i></div>
-                    <div><strong class="map-title">Head Office</strong><div class="map-desc">Corporate Branch</div></div>
+                    <div><div style="font-size: 13px; font-weight: 700; color: #1e293b;">Head Office</div><div class="map-desc">Corporate Branch</div></div>
                 </a>
                 <a href="https://maps.google.com/?q=Taj+Bentota+Resort+and+Spa" target="_blank" class="map-btn btn-taj">
                     <div class="map-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-                    <div><strong class="map-title">Taj Bentota</strong><div class="map-desc">Tap for Map</div></div>
+                    <div><div style="font-size: 13px; font-weight: 700; color: #1e293b;">Taj Bentota</div><div class="map-desc">Tap for Map</div></div>
                 </a>
             </div>
 
-            <!-- TIMELINE MODULE CARD CONTAINER -->
             <div class="card">
                 
-                <!-- DAY 01 -->
                 <div class="day-header">
                     <div>☀️ Day 01</div>
                     <div class="day-header-date">Sat, 27 June</div>
@@ -295,7 +265,6 @@
                     </div>
                 </div>
 
-                <!-- DAY 02 MODULE DISPLAY TRACK -->
                 <div class="day-header day-two-space">
                     <div>🌴 Day 02</div>
                     <div class="day-header-date">Sun, 28 June</div>
@@ -336,7 +305,6 @@
 
             </div>
 
-            <!-- CHECKLIST INTERACTION SYSTEM -->
             <div class="card">
                 <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
                     <i class="fa-solid fa-clipboard-check" style="color: #e11d48; font-size: 16px;"></i>
@@ -358,4 +326,29 @@
                 </div>
             </div>
 
-            <!-- ASSISTANCE F
+            <div class="notice-card">
+                <div class="notice-title">Trip Support Notice</div>
+                <div class="notice-desc">Need assistance, seat adjustments, or medical/family logistics support along the route? Touch base directly with the onsite COU Organizing committee members immediately.</div>
+            </div>
+        </main>
+
+        <footer>
+            <div>© 2026 Commercial Bank Centralized Operations Unit</div>
+            <div style="color: #cbd5e1; margin-top: 4px;">Together We Celebrate</div>
+        </footer>
+    </div>
+
+    <script>
+        function runLiveCountdown() {
+            // Integer parameters: Year, Month Index (5 = June), Day, Hour, Minute, Second
+            var targetDate = new Date(2026, 5, 27, 8, 45, 0).getTime();
+
+            function updateClock() {
+                var now = new Date().getTime();
+                var distance = targetDate - now;
+
+                if (distance < 0) {
+                    document.getElementById('days').innerText = "00";
+                    document.getElementById('hours').innerText = "00";
+                    document.getElementById('minutes').innerText = "00";
+                    document.getElementById('seconds').innerText 
