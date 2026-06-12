@@ -41,9 +41,9 @@
             50% { box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.35); }
         }
 
-        /* Official Premium Taj Resort Background Image */
+        /* Official Premium Taj Resort Background Image Background Styling */
         header {
-            background: linear-gradient(to bottom, rgba(15, 43, 70, 0.75), rgba(26, 74, 117, 0.88)), 
+            background: linear-gradient(to bottom, rgba(15, 43, 70, 0.74), rgba(26, 74, 117, 0.86)), 
                         url('https://cdn.sanity.io/images/ocl5w36p/ihcl_prod/cc5b137db63129a16d9368c44f7f642611a74455-1720x1112.jpg?w=480&auto=format&dpr=2');
             background-size: cover;
             background-position: center;
@@ -72,23 +72,56 @@
         .amber-txt { color: #fbbf24; font-weight: 800; }
         .resort-text { font-size: 14px; color: #cbd5e1; margin-bottom: 15px; font-weight: 600; }
 
-        /* Countdown Widget Grid */
-        .countdown-box {
+        /* Upgraded Experience Highlights Matrix Dashboard Card */
+        .trip-status-box {
             background-color: rgba(15, 23, 42, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 18px;
-            padding: 14px;
-            margin: 15px 0;
+            padding: 12px;
+            margin: 16px 0;
             backdrop-filter: blur(8px);
+            text-align: left;
         }
-        .countdown-title { font-size: 11px; text-transform: uppercase; color: #cbd5e1; font-weight: 700; margin-bottom: 10px; letter-spacing: 0.5px; }
-        .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-        .count-card { background: rgba(15, 23, 42, 0.5); padding: 10px 6px; border-radius: 10px; }
-        .count-val { display: block; font-size: 20px; font-weight: 800; }
-        .count-lbl { font-size: 9px; color: #a1a1aa; text-transform: uppercase; font-weight: 600; margin-top: 2px; }
+        .status-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(15, 23, 42, 0.4);
+            padding: 8px 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .status-icon {
+            color: #fbbf24;
+            font-size: 14px;
+            width: 16px;
+            text-align: center;
+        }
+        .status-details {
+            display: flex;
+            flex-direction: column;
+        }
+        .status-label {
+            font-size: 9px;
+            color: #a1a1aa;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .status-value {
+            font-size: 11px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-top: 1px;
+        }
         .date-footer { font-size: 11px; color: #cbd5e1; font-style: italic; margin-top: 4px; }
 
-        /* Main Elements Content Body Layout */
+        /* Main App Layout */
         main { padding: 20px 16px; }
         
         .card {
@@ -105,7 +138,7 @@
         .card-subtitle { font-size: 11px; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin-bottom: 6px; }
         .card-text { font-size: 14px; color: #334155; font-style: italic; line-height: 1.5; }
 
-        /* Action Maps Shortcuts Navigation Buttons */
+        /* Maps Redirect Grid Layout */
         .maps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
         .map-btn {
             background: #ffffff; border: 1px solid #e2e8f0; padding: 12px; border-radius: 16px;
@@ -114,10 +147,8 @@
         .map-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
         .btn-ho .map-icon { background: #eff6ff; color: #2563eb; }
         .btn-taj .map-icon { background: #fffbeb; color: #d97706; }
-        .map-title { font-size: 13px; font-weight: 700; color: #1e293b; display: block; }
-        .map-desc { font-size: 10px; color: #94a3b8; margin-top: 1px; }
 
-        /* Day Separator Dividers */
+        /* Timelines Blocks Setup */
         .day-header {
             background: #0f172a;
             color: #ffffff;
@@ -133,7 +164,6 @@
         .day-header-date { font-size: 11px; font-weight: 600; color: #94a3b8; }
         .day-two-space { margin-top: 28px; }
 
-        /* Unified Timeline Tree Styling */
         .timeline { border-left: 2px solid #e2e8f0; margin-left: 10px; padding-left: 22px; position: relative; }
         .time-block { position: relative; margin-bottom: 26px; }
         .time-dot {
@@ -146,7 +176,6 @@
         .event-title { font-size: 14px; font-weight: 700; color: #0f172a; }
         .event-desc { font-size: 12px; color: #64748b; margin-top: 3px; line-height: 1.4; }
         
-        /* Special Row Highlights for DJ Night Card */
         .highlight-block { 
             background: #fffbeb; 
             border: 1px solid #fef3c7; 
@@ -172,7 +201,7 @@
         footer { text-align: center; margin-top: 30px; font-size: 11px; color: #94a3b8; font-weight: 500; }
     </style>
 </head>
-<body>
+<body class="notranslate">
 
     <div class="app-container">
         <header>
@@ -180,13 +209,36 @@
             <h1>COU Annual Trip <div class="amber-txt">2026</div></h1>
             <div class="resort-text"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa</div>
 
-            <div class="countdown-box">
-                <div class="countdown-title">Countdown to Getaway</div>
-                <div class="countdown-grid">
-                    <div class="count-card"><div class="count-val" id="days" style="color: #fbbf24;">00</div><div class="count-lbl">Days</div></div>
-                    <div class="count-card"><div class="count-val" id="hours">00</div><div class="count-lbl">Hours</div></div>
-                    <div class="count-card"><div class="count-val" id="minutes">00</div><div class="count-lbl">Mins</div></div>
-                    <div class="count-card"><div class="count-val" id="seconds" style="color: #f43f5e;">00</div><div class="count-lbl">Secs</div></div>
+            <div class="trip-status-box">
+                <div class="status-grid">
+                    <div class="status-item">
+                        <i class="fa-solid fa-calendar-day status-icon"></i>
+                        <div class="status-details">
+                            <div class="status-label">Duration</div>
+                            <div class="status-value">2 Days / 1 Night</div>
+                        </div>
+                    </div>
+                    <div class="status-item">
+                        <i class="fa-solid fa-umbrella-beach status-icon"></i>
+                        <div class="status-details">
+                            <div class="status-label">Destination</div>
+                            <div class="status-value">Bentota Coast</div>
+                        </div>
+                    </div>
+                    <div class="status-item">
+                        <i class="fa-solid fa-champagne-glasses status-icon"></i>
+                        <div class="status-details">
+                            <div class="status-label">Day 1 Focus</div>
+                            <div class="status-value">DJ Gala Night</div>
+                        </div>
+                    </div>
+                    <div class="status-item">
+                        <i class="fa-solid fa-trophy status-icon"></i>
+                        <div class="status-details">
+                            <div class="status-label">Day 2 Focus</div>
+                            <div class="status-value">Family Games</div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="date-footer">📅 Saturday, 27 June – Sunday, 28 June 2026</div>
@@ -296,7 +348,7 @@
                         <div class="event-desc">Enjoy one final luxury community meal together before packing buses.</div>
                     </div>
                     <div class="time-block">
-                        <div class="time-dot" style="background:#d97706;"></div>
+                        <div class="time-dot"></div>
                         <div class="time-header-row"><div class="time-txt">02:30 PM – 03:00 PM</div><div class="badge-type" style="background:#fef3c7; color:#78350f;">GO</div></div>
                         <div class="event-title">Departure from Hotel</div>
                         <div class="event-desc">The return journey back to corporate headquarters begins.</div>
@@ -327,28 +379,4 @@
             </div>
 
             <div class="notice-card">
-                <div class="notice-title">Trip Support Notice</div>
-                <div class="notice-desc">Need assistance, seat adjustments, or medical/family logistics support along the route? Touch base directly with the onsite COU Organizing committee members immediately.</div>
-            </div>
-        </main>
-
-        <footer>
-            <div>© 2026 Commercial Bank Centralized Operations Unit</div>
-            <div style="color: #cbd5e1; margin-top: 4px;">Together We Celebrate</div>
-        </footer>
-    </div>
-
-    <script>
-        function runLiveCountdown() {
-            // Integer parameters: Year, Month Index (5 = June), Day, Hour, Minute, Second
-            var targetDate = new Date(2026, 5, 27, 8, 45, 0).getTime();
-
-            function updateClock() {
-                var now = new Date().getTime();
-                var distance = targetDate - now;
-
-                if (distance < 0) {
-                    document.getElementById('days').innerText = "00";
-                    document.getElementById('hours').innerText = "00";
-                    document.getElementById('minutes').innerText = "00";
-                    document.getElementById('seconds').innerText 
+                <div class="notice-title">Trip Support 
