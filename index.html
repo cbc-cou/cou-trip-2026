@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COU Annual Trip 2026 | Commercial Bank</title>
+    <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -18,12 +19,11 @@
             padding-bottom: 60px;
         }
         
-        /* Mobile App Container Layout */
         .app-container {
             max-width: 450px;
             margin: 0 auto;
             background-color: #f8fafc;
-            min-height: screen;
+            min-height: 100vh;
         }
 
         /* Premium Header Styling with Image Backdrop */
@@ -52,7 +52,7 @@
             letter-spacing: 0.5px;
         }
         
-        h1 { font-size: 28px; font-weight: 800; margin-bottom: 5px; }
+        h1 { font-size: 26px; font-weight: 800; margin-bottom: 5px; }
         h1 span { color: #fbbf24; }
         .resort-text { font-size: 14px; color: #cbd5e1; margin-bottom: 15px; }
 
@@ -65,7 +65,7 @@
             margin: 15px 0;
         }
         .countdown-title { font-size: 11px; text-transform: uppercase; color: #cbd5e1; font-weight: 600; margin-bottom: 8px; }
-        .countdown-grid { display: grid; grid-cols: 4; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
         .count-card { background: rgba(15, 23, 42, 0.5); padding: 8px; border-radius: 8px; }
         .count-card span { display: block; font-size: 18px; font-weight: 700; }
         .count-lbl { font-size: 9px; color: #94a3b8; text-transform: uppercase; }
@@ -81,7 +81,6 @@
             margin-bottom: 16px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             border: 1px solid #e2e8f0;
-            position: relative;
         }
         
         .motto-card { border-left: 5px solid #fbbf24; }
@@ -94,7 +93,7 @@
             background: #ffffff; border: 1px solid #e2e8f0; padding: 12px; border-radius: 14px;
             display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;
         }
-        .map-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-center: center; font-size: 14px; }
+        .map-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
         .btn-ho .map-icon { background: #eff6ff; color: #2563eb; }
         .btn-taj .map-icon { background: #fffbeb; color: #d97706; }
         .map-title { font-size: 13px; font-weight: 700; color: #1e293b; display: block; }
@@ -104,10 +103,12 @@
         .tab-bar { background: #f1f5f9; padding: 6px; border-radius: 14px; display: flex; gap: 4px; margin-bottom: 16px; border: 1px solid #e2e8f0; }
         .tab-btn {
             flex: 1; padding: 10px 0; border: none; border-radius: 10px; font-size: 13px; font-weight: 700;
-            cursor: pointer; background: transparent; color: #64748b; transition: all 0.2s ease;
+            cursor: pointer; background: transparent; color: #64748b; text-align: center;
         }
         .tab-btn span { display: block; font-size: 10px; font-weight: 400; opacity: 0.8; }
-        .tab-btn.active { background: #0f172a; color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        
+        /* Direct style states for clear activation */
+        .tab-btn.active { background: #0f172a !important; color: #ffffff !important; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
 
         /* Timeline Blocks Setup */
         .timeline { border-left: 2px solid #e2e8f0; margin-left: 10px; padding-left: 20px; position: relative; }
@@ -126,7 +127,7 @@
         .highlight-block { background: #fffbeb; border: 1px solid #fef3c7; padding: 12px; border-radius: 12px; margin-left: -8px; }
         .highlight-block .time-dot { left: -21px; background: #d97706; }
         .highlight-block .badge-type { background: #fbbf24; color: #78350f; }
-        .party-list { font-size: 12px; color: #475569; margin-top: 6px; padding-left: 16px; }
+        .party-list { font-size: 12px; color: #475569; margin-top: 6px; padding-left: 16px; list-style-type: disc; }
 
         /* Custom Checklist Rows Layout */
         .check-item { display: flex; align-items: flex-start; gap: 12px; background: #f8fafc; padding: 10px; border-radius: 10px; margin-top: 8px; }
@@ -140,19 +141,15 @@
 
         /* Footer Typography Details */
         footer { text-align: center; margin-top: 25px; font-size: 10px; color: #94a3b8; }
-        
-        /* Bulletproof Dynamic Display Logic Actions */
-        .hide-panel { display: none !important; }
-        .show-panel { display: block !important; }
     </style>
 </head>
 <body>
 
     <div class="app-container">
         <header>
-            <span class="badge-dept">Commercial Bank · Centralized Operations Unit</span>
-            <h1>COU Annual Trip <span>2026</span></h1>
-            <p class="resort-text"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa</p>
+            <span class="badge-dept">Commercial Bank · Centralized Operations Unit[span_0](start_span)[span_0](end_span)</span>
+            <h1>COU Annual Trip <span>2026</span>[span_1](start_span)[span_1](end_span)</h1>
+            <p class="resort-text"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa[span_2](start_span)[span_2](end_span)</p>
 
             <div class="countdown-box">
                 <p class="countdown-title">Countdown to Getaway</p>
@@ -163,23 +160,24 @@
                     <div class="count-card"><span id="seconds" style="color: #f43f5e;">00</span><div class="count-lbl">Secs</div></div>
                 </div>
             </div>
-            <p class="date-footer">📅 Saturday, 27 June – Sunday, 28 June 2026</p>
+            <p class="date-footer">📅 Saturday, 27 June – Sunday, 28 June 2026[span_3](start_span)[span_3](end_span)</p>
         </header>
 
         <main>
             <div class="card motto-card">
                 <h3 class="card-subtitle">Our Journey Together</h3>
-                <p class="card-text">"Together we work. Together we celebrate. Together we create memories."</p>
+                <p class="card-text">"Together we work. Together we celebrate. Together we create memories.[span_4](start_span)"[span_4](end_span)</p>
             </div>
 
+            <!-- UPDATED GEOLOCATION BAR WITH EXACT CORPORATE BRANCH QUERY -->
             <div class="maps-grid">
-                <a href="https://maps.google.com/?q=Commercial+Bank+Head+Office+Colombo" target="_blank" class="map-btn btn-ho">
+                <a href="https://maps.google.com/?q=Commercial+Bank+Corporate+Branch+Fort+Colombo" target="_blank" class="map-btn btn-ho">
                     <div class="map-icon"><i class="fa-solid fa-bus"></i></div>
-                    <div><span class="map-title">Head Office</span><span class="map-desc">Duke Street Side</span></div>
+                    <div><span class="map-title">Head Office</span><span class="map-desc">Corporate Branch</span></div>
                 </a>
                 <a href="https://maps.google.com/?q=Taj+Bentota+Resort+Spa" target="_blank" class="map-btn btn-taj">
                     <div class="map-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-                    <div><span class="map-title">Taj Bentota</span><span class="map-desc">Tap for Map Links</span></div>
+                    <div><span class="map-title">Taj Bentota[span_5](start_span)[span_5](end_span)</span><span class="map-desc">Tap for Map Links</span></div>
                 </a>
             </div>
 
@@ -190,13 +188,14 @@
 
             <div class="card">
                 
-                <div id="panel-day1" class="show-panel">
+                <!-- DAY 01 TIMELINE SCHEDULE -->
+                <div id="panel-day1" style="display: block;">
                     <div class="timeline">
                         <div class="time-block">
                             <div class="time-dot"></div>
                             <div class="time-header"><span class="time-txt">08:45 AM</span><span class="badge-type">BU</span></div>
                             <h4 class="event-title">Arrival of Transport (Buses)</h4>
-                            <p class="event-desc">At Head Office – Duke Street Side.</p>
+                            <p class="event-desc">At Corporate Branch.</p>
                         </div>
                         <div class="time-block">
                             <div class="time-dot"></div>
@@ -241,7 +240,8 @@
                     </div>
                 </div>
 
-                <div id="panel-day2" class="hide-panel">
+                <!-- DAY 02 TIMELINE SCHEDULE -->
+                <div id="panel-day2" style="display: none;">
                     <div class="timeline">
                         <div class="time-block">
                             <div class="time-dot"></div>
@@ -291,7 +291,7 @@
                 </div>
                 <div class="check-item">
                     <input type="checkbox" id="c2">
-                    <label for="c2" class="check-text">Clear auxiliary personal minibar bills/room tabs at Front Desk</label>
+                    <label for="c2" class="check-text">Clear auxiliary personal minibar bills/room orders at Front Desk</label>
                 </div>
                 <div class="check-item">
                     <input type="checkbox" id="c3">
@@ -306,11 +306,12 @@
         </main>
 
         <footer>
-            <p>© 2026 Commercial Bank Centralized Operations Unit</p>
+            <p>© 2026 Commercial Bank Centralized Operations Unit[span_6](start_span)[span_6](end_span)</p>
             <p style="color: #cbd5e1; margin-top: 4px;">Together We Celebrate</p>
         </footer>
     </div>
 
+    <!-- CLEAN NATIVE SWITCH LOGIC -->
     <script>
         function switchDay(dayId) {
             const p1 = document.getElementById('panel-day1');
@@ -319,13 +320,13 @@
             const b2 = document.getElementById('btn-day2');
 
             if (dayId === 'day1') {
-                p1.className = "show-panel";
-                p2.className = "hide-panel";
+                p1.style.display = 'block';
+                p2.style.display = 'none';
                 b1.className = "tab-btn active";
                 b2.className = "tab-btn";
             } else {
-                p1.className = "hide-panel";
-                p2.className = "show-panel";
+                p1.style.display = 'none';
+                p2.style.display = 'block';
                 b1.className = "tab-btn";
                 b2.className = "tab-btn active";
             }
@@ -339,11 +340,4 @@
                 const distance = targetDate - now;
 
                 if (distance < 0) {
-                    document.getElementById('days').innerText = "00";
-                    document.getElementById('hours').innerText = "00";
-                    document.getElementById('minutes').innerText = "00";
-                    document.getElementById('seconds').innerText = "00";
-                    return;
-                }
-
-                const d = Math.floor
+  
