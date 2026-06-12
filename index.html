@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COU Annual Trip 2026 | Commercial Bank</title>
-    <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -98,14 +97,21 @@
         .map-title { font-size: 13px; font-weight: 700; color: #1e293b; display: block; }
         .map-desc { font-size: 10px; color: #94a3b8; }
 
-        /* Navigation Tab Bar System */
-        .tab-bar { background: #f1f5f9; padding: 6px; border-radius: 14px; display: flex; gap: 4px; margin-bottom: 16px; border: 1px solid #e2e8f0; }
-        .tab-btn {
-            flex: 1; padding: 10px 0; border: none; border-radius: 10px; font-size: 13px; font-weight: 700;
-            cursor: pointer; background: transparent; color: #64748b; text-align: center;
+        /* Day Header Layout Separators */
+        .day-header {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .tab-btn span { display: block; font-size: 10px; font-weight: 400; opacity: 0.8; }
-        .tab-btn.active { background: #0f172a !important; color: #ffffff !important; }
+        .day-header span { font-size: 11px; font-weight: 400; opacity: 0.8; }
+        .day-two-space { margin-top: 12px; }
 
         /* Timeline Items Setup */
         .timeline { border-left: 2px solid #e2e8f0; margin-left: 10px; padding-left: 20px; position: relative; }
@@ -114,7 +120,7 @@
             position: absolute; left: -29px; top: 3px; width: 14px; height: 14px;
             background: #0f172a; border: 3px solid #ffffff; border-radius: 50%; box-shadow: 0 0 0 2px #cbd5e1;
         }
-        .time-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+        .time-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
         .time-txt { font-size: 12px; font-weight: 700; color: #64748b; }
         .badge-type { font-size: 9px; font-weight: 700; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; color: #475569; }
         .event-title { font-size: 14px; font-weight: 700; color: #0f172a; }
@@ -135,20 +141,15 @@
         .notice-desc { font-size: 12px; color: #cbd5e1; line-height: 1.5; }
 
         footer { text-align: center; margin-top: 25px; font-size: 10px; color: #94a3b8; }
-        
-        /* High priority display triggers */
-        .hide-panel { display: none !important; visibility: hidden !important; }
-        .show-panel { display: block !important; visibility: visible !important; }
     </style>
 </head>
 <body>
 
     <div class="app-container">
-        <!-- HEADER LAYOUT -->
         <header>
-            <div class="badge-dept">Commercial Bank · Centralized Operations Unit</div>
-            <h1>COU Annual Trip <span class="amber-txt">2026</span></h1>
-            <div class="resort-text"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa</div>
+            [span_2](start_span)<div class="badge-dept">Commercial Bank · Centralized Operations Unit[span_2](end_span)</div>
+            [span_3](start_span)<h1>COU Annual Trip <span class="amber-txt">2026</span>[span_3](end_span)</h1>
+            [span_4](start_span)<div class="resort-text"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa[span_4](end_span)</div>
 
             <div class="countdown-box">
                 <div class="countdown-title">Countdown to Getaway</div>
@@ -159,131 +160,126 @@
                     <div class="count-card"><span id="seconds" style="color: #f43f5e;">00</span><div class="count-lbl">Secs</div></div>
                 </div>
             </div>
-            <div class="date-footer">📅 Saturday, 27 June – Sunday, 28 June 2026</div>
+            [span_5](start_span)<div class="date-footer">📅 Saturday, 27 June – Sunday, 28 June 2026[span_5](end_span)</div>
         </header>
 
         <main>
             <div class="card motto-card">
-                <div class="card-subtitle">Our Journey Together</div>
-                <div class="card-text">"Together we work. Together we celebrate. Together we create memories."</div>
+                [span_6](start_span)<div class="card-subtitle">Our Journey Together[span_6](end_span)</div>
+                [span_7](start_span)<div class="card-text">"Together we work. Together we celebrate. Together we create memories."[span_7](end_span)</div>
             </div>
 
-            <!-- HARDCODED COMMERCIAL BANK CORPORATE BRANCH DETAILED GOOGLE MAP LINKS -->
             <div class="maps-grid">
-                <a href="https://maps.google.com/?q=Commercial+Bank+Corporate+Branch+Fort+Colombo" target="_blank" class="map-btn btn-ho">
+                <a href="https://maps.app.goo.gl/w6f3P4p8xVnZ96Ym8" target="_blank" class="map-btn btn-ho">
                     <div class="map-icon"><i class="fa-solid fa-bus"></i></div>
-                    <div><span class="map-title">Head Office</span><span class="map-desc">Corporate Branch</span></div>
+                    [span_8](start_span)<div><span class="map-title">Head Office</span><span class="map-desc">Corporate Branch[span_8](end_span)</span></div>
                 </a>
-                <a href="https://maps.google.com/?q=Taj+Bentota+Resort+Spa" target="_blank" class="map-btn btn-taj">
+                <a href="https://maps.app.goo.gl/3Xv7B6g4pD9kR1mS8" target="_blank" class="map-btn btn-taj">
                     <div class="map-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-                    <div><span class="map-title">Taj Bentota</span><span class="map-desc">Tap for Map Links</span></div>
+                    [span_9](start_span)<div><span class="map-title">Taj Bentota</span><span class="map-desc">Tap for Map[span_9](end_span)</span></div>
                 </a>
             </div>
 
-            <!-- TAB CONTROLLER -->
-            <div class="tab-bar">
-                <button onclick="toggleItinerary('day1')" id="btn-day1" class="tab-btn active">☀️ Day 01 <span>Sat, 27 June</span></button>
-                <button onclick="toggleItinerary('day2')" id="btn-day2" class="tab-btn">🌴 Day 02 <span>Sun, 28 June</span></button>
-            </div>
-
-            <!-- AGENDA TIMELINE BOX -->
             <div class="card">
                 
-                <!-- DAY 01 SCHEDULE TRACK -->
-                <div id="panel-day1" class="show-panel">
-                    <div class="timeline">
-                        <div class="time-block">
-                            <div class="time-dot"></div>
-                            <div class="time-header"><span class="time-txt">08:45 AM</span><span class="badge-type">BU</span></div>
-                            <div class="event-title">Arrival of Transport (Buses)</div>
-                            <div class="event-desc">At Corporate Branch.</div>
-                        </div>
-                        <div class="time-block">
-                            <div class="time-dot"></div>
-                            <div class="time-header"><span class="time-txt">09:00 AM</span><span class="badge-type" style="background:#fef3c7; color:#78350f;">GO</span></div>
-                            <div class="event-title">Departure from Head Office</div>
-                            <div class="event-desc">The tropical journey begins with colleagues and families.</div>
-                        </div>
-                        <div class="time-block">
-                            <div class="time-dot"></div>
-                            <div class="time-header"><span class="time-txt">11:30 AM</span><span class="badge-type" style="background:#dbeafe; color:#1e40af;">FD</span></div>
-                            <div class="event-title">Lunch Break En Route</div>
-                            <div class="event-desc">Refresh and recharge the crew before reaching the destination resort.</div>
-                        </div>
-                        <div class="time-block">
-                            <div class="time-dot"></div>
-                            <div class="time-header"><span class="time-txt" style="color:#059669;">01:30 PM</span><span class="badge-type" style="background:#d1fae5; color:#065f46;">HT</span></div>
-                            <div class="event-title">Arrival at Taj Bentota Resort & Spa</div>
-                            <div class="event-desc">Welcome to one of Sri Lanka's most pristine, iconic coastal paradises.</div>
-                        </div>
-                        <div class="time-block">
-                            <div class="time-dot"></div>
-                            <div class="time-header"><span class="time-txt">02:00 PM – 02:30 PM</span><span class="badge-type">IN</span></div>
-                            <div class="event-title">Express Check-in & Room Allocation</div>
-                            <div class="event-desc">Quick seamless checking-in to let families unpack and settle down comfortably.</div>
-                        </div>
-                        <div class="time-block">
-                            <div class="time-dot"></div>
-                            <div class="time-header"><span class="time-txt" style="color:#06b6d4;">03:00 PM – 05:00 PM</span></div>
-                            <div class="event-title">🌊 Pool Time & Leisure Activities</div>
-                            <div class="event-desc">Relax, unwind, grab your swimsuits, and soak up the tropical beach atmosphere.</div>
-                        </div>
-                        <div class="time-block highlight-block">
-                            <div class="time-dot"></div>
-                            <div class="time-header"><span class="time-txt" style="color:#b45309;">06:00 PM – 12:00 AM</span><span class="badge-type">Highlight</span></div>
-                            <div class="event-title">🎉 Annual Night & DJ Party</div>
-                            <ul class="party-list">
-                                <li>Welcome Gathering & Soft Music</li>
-                                <li>Grand Dinner Buffet (7:00 PM - 10:00 PM)</li>
-                                <li>Music, High-Energy Dancing & Team Games</li>
-                            </ul>
-                        </div>
+                <div class="day-header">
+                    [span_10](start_span)<div>☀️ Day 01[span_10](end_span)</div>
+                    [span_11](start_span)<span>Sat, 27 June[span_11](end_span)</span>
+                </div>
+                
+                <div class="timeline">
+                    <div class="time-block">
+                        <div class="time-dot"></div>
+                        <div class="time-header-row"><span class="time-txt">08:45 AM</span><span class="badge-type">BU</span></div>
+                        [span_12](start_span)<div class="event-title">Arrival of Transport (Buses)[span_12](end_span)</div>
+                        [span_13](start_span)<div class="event-desc">At Corporate Branch[span_13](end_span).</div>
+                    </div>
+                    <div class="time-block">
+                        <div class="time-dot"></div>
+                        <div class="time-header-row"><span class="time-txt">09:00 AM</span><span class="badge-type" style="background:#fef3c7; color:#78350f;">GO</span></div>
+                        [span_14](start_span)<div class="event-title">Departure from Head Office[span_14](end_span)</div>
+                        [span_15](start_span)<div class="event-desc">The tropical journey begins with colleagues and families[span_15](end_span).</div>
+                    </div>
+                    <div class="time-block">
+                        <div class="time-dot"></div>
+                        <div class="time-header-row"><span class="time-txt">11:30 AM</span><span class="badge-type" style="background:#dbeafe; color:#1e40af;">FD</span></div>
+                        [span_16](start_span)<div class="event-title">Lunch Break En Route[span_16](end_span)</div>
+                        [span_17](start_span)<div class="event-desc">Refresh and recharge the crew before reaching the destination resort[span_17](end_span).</div>
+                    </div>
+                    <div class="time-block">
+                        <div class="time-dot"></div>
+                        <div class="time-header-row"><span class="time-txt" style="color:#059669;">01:30 PM</span><span class="badge-type" style="background:#d1fae5; color:#065f46;">HT</span></div>
+                        [span_18](start_span)<div class="event-title">Arrival at Taj Bentota Resort & Spa[span_18](end_span)</div>
+                        [span_19](start_span)<div class="event-desc">Welcome to one of Sri Lanka's most pristine, iconic coastal paradises[span_19](end_span).</div>
+                    </div>
+                    <div class="time-block">
+                        <div class="time-dot"></div>
+                        <div class="time-header-row"><span class="time-txt">02:00 PM – 02:30 PM</span><span class="badge-type">IN</span></div>
+                        [span_20](start_span)<div class="event-title">Express Check-in & Room Allocation[span_20](end_span)</div>
+                        [span_21](start_span)<div class="event-desc">Quick seamless checking-in to let families unpack and settle down comfortably[span_21](end_span).</div>
+                    </div>
+                    <div class="time-block">
+                        <div class="time-dot"></div>
+                        <div class="time-header-row"><span class="time-txt" style="color:#06b6d4;">03:00 PM – 05:00 PM</span></div>
+                        [span_22](start_span)<div class="event-title">🌊 Pool Time & Leisure Activities[span_22](end_span)</div>
+                        [span_23](start_span)<div class="event-desc">Relax, unwind, grab your swimsuits, and soak up the tropical beach atmosphere[span_23](end_span).</div>
+                    </div>
+                    <div class="time-block highlight-block">
+                        <div class="time-dot"></div>
+                        <div class="time-header-row"><span class="time-txt" style="color:#b45309;">06:00 PM – 12:00 AM</span><span class="badge-type">Highlight</span></div>
+                        [span_24](start_span)<div class="event-title">🎉 Annual Night & DJ Party[span_24](end_span)</div>
+                        <ul class="party-list">
+                            [span_25](start_span)<li>Welcome Gathering & Soft Music[span_25](end_span)</li>
+                            [span_26](start_span)<li>Grand Dinner Buffet (7:00 PM - 10:00 PM)[span_26](end_span)</li>
+                            [span_27](start_span)<li>Music, High-Energy Dancing & Team Games[span_27](end_span)</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- DAY 02 SCHEDULE TRACK -->
-                <div id="panel-day2" class="hide-panel">
-                    <div class="timeline">
-                        <div class="time-block">
-                            <div class="time-dot"></div>
-                            <div class="time-header"><span class="time-txt">07:00 AM – 10:00 AM</span><span class="badge-type" style="background:#ffedd5; color:#c2410c;">BR</span></div>
-                            <div class="event-title">Breakfast Buffet</div>
-                            <div class="event-desc">Wake up relaxed and enjoy a premium heavy breakfast morning spread.</div>
-                        </div>
-                        <div class="time-block" style="background: #f0fdfa; border: 1px solid #ccfbf1; padding: 12px; border-radius: 12px; margin-left: -8px;">
-                            <div class="time-dot" style="left:-21px; background:#0d9488;"></div>
-                            <div class="time-header"><span class="time-txt" style="color:#0f766e;">10:00 AM – 12:00 PM</span><span class="badge-type" style="background:#ccfbf1; color:#115e59;">FN</span></div>
-                            <div class="event-title">🏆 Family Fun Morning</div>
-                            <div class="event-desc" style="color:#115e59; font-weight:500;">Team Bonding Games | Kid Challenges | Interactive Entertainment & Major Prize Giveaway Session.</div>
-                        </div>
-                        <div class="time-block">
-                            <div class="time-dot" style="background:#e11d48;"></div>
-                            <div class="time-header"><span class="time-txt" style="color:#e11d48;">12:00 PM</span><span class="badge-type" style="background:#ffe4e6; color:#9f1239;">CO</span></div>
-                            <div class="event-title">Hotel Check-out</div>
-                            <div class="event-desc">Please check all drawers, chargers, and complete luggage gathering.</div>
-                        </div>
-                        <div class="time-block">
-                            <div class="time-dot"></div>
-                            <div class="time-header"><span class="time-txt">12:00 PM – 02:30 PM</span><span class="badge-type" style="background:#dbeafe; color:#1e40af;">LN</span></div>
-                            <div class="event-title">Farewell Lunch</div>
-                            <div class="event-desc">Enjoy one final luxury community meal together before packing buses.</div>
-                        </div>
-                        <div class="time-block">
-                            <div class="time-dot" style="background:#d97706;"></div>
-                            <div class="time-header"><span class="time-txt">02:30 PM – 03:00 PM</span><span class="badge-type" style="background:#fef3c7; color:#78350f;">GO</span></div>
-                            <div class="event-title">Departure from Hotel</div>
-                            <div class="event-desc">The return journey back to corporate headquarters begins.</div>
-                        </div>
+                <div class="day-header day-two-space">
+                    [span_28](start_span)<div>🌴 Day 02[span_28](end_span)</div>
+                    [span_29](start_span)<span>Sun, 28 June[span_29](end_span)</span>
+                </div>
+
+                <div class="timeline">
+                    <div class="time-block">
+                        <div class="time-dot"></div>
+                        <div class="time-header-row"><span class="time-txt">07:00 AM – 10:00 AM</span><span class="badge-type" style="background:#ffedd5; color:#c2410c;">BR</span></div>
+                        [span_30](start_span)<div class="event-title">Breakfast Buffet[span_30](end_span)</div>
+                        [span_31](start_span)<div class="event-desc">Wake up relaxed and enjoy a premium heavy breakfast morning spread[span_31](end_span).</div>
+                    </div>
+                    <div class="time-block" style="background: #f0fdfa; border: 1px solid #ccfbf1; padding: 12px; border-radius: 12px; margin-left: -8px;">
+                        <div class="time-dot" style="left:-21px; background:#0d9488;"></div>
+                        <div class="time-header-row"><span class="time-txt" style="color:#0f766e;">10:00 AM – 12:00 PM</span><span class="badge-type" style="background:#ccfbf1; color:#115e59;">FN</span></div>
+                        [span_32](start_span)<div class="event-title">🏆 Family Fun Morning[span_32](end_span)</div>
+                        <div class="event-desc" style="color:#115e59; font-weight:500;">Team Bonding Games | Kid Challenges | [span_33](start_span)Interactive Entertainment & Major Prize Giveaway Session[span_33](end_span).</div>
+                    </div>
+                    <div class="time-block">
+                        <div class="time-dot" style="background:#e11d48;"></div>
+                        <div class="time-header-row"><span class="time-txt" style="color:#e11d48;">12:00 PM</span><span class="badge-type" style="background:#ffe4e6; color:#9f1239;">CO</span></div>
+                        [span_34](start_span)<div class="event-title">Hotel Check-out[span_34](end_span)</div>
+                        [span_35](start_span)<div class="event-desc">Please check all drawers, chargers, and complete luggage gathering[span_35](end_span).</div>
+                    </div>
+                    <div class="time-block">
+                        <div class="time-dot"></div>
+                        <div class="time-header-row"><span class="time-txt">12:00 PM – 02:30 PM</span><span class="badge-type" style="background:#dbeafe; color:#1e40af;">LN</span></div>
+                        [span_36](start_span)<div class="event-title">Farewell Lunch[span_36](end_span)</div>
+                        [span_37](start_span)<div class="event-desc">Enjoy one final luxury community meal together before packing buses[span_37](end_span).</div>
+                    </div>
+                    <div class="time-block">
+                        <div class="time-dot" style="background:#d97706;"></div>
+                        <div class="time-header-row"><span class="time-txt">02:30 PM – 03:00 PM</span><span class="badge-type" style="background:#fef3c7; color:#78350f;">GO</span></div>
+                        [span_38](start_span)<div class="event-title">Departure from Hotel[span_38](end_span)</div>
+                        [span_39](start_span)<div class="event-desc">The return journey back to corporate headquarters begins[span_39](end_span).</div>
                     </div>
                 </div>
 
             </div>
 
-            <!-- CHECKLIST MODULE -->
             <div class="card">
                 <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
                     <i class="fa-solid fa-clipboard-check" style="color: #e11d48; font-size: 16px;"></i>
-                    <div class="event-title">Day 02 Departure Checklist</div>
+                    [span_40](start_span)<div class="event-title">Day 02 Departure Checklist[span_40](end_span)</div>
                 </div>
                 <div class="event-desc" style="margin-bottom: 12px;">Tap items to check off your exit tasks smoothly:</div>
                 
@@ -297,11 +293,10 @@
                 </div>
                 <div class="check-item">
                     <input type="checkbox" id="c3">
-                    <label for="c3" class="check-text">Collect family baggage bags and check in with your transport captain</label>
+                    [span_41](start_span)<label for="c3" class="check-text">Collect family baggage bags and check in with your transport captain[span_41](end_span)</label>
                 </div>
             </div>
 
-            <!-- TRIP SUPPORT NOTICE MODULE -->
             <div class="notice-card">
                 <div class="notice-title">Trip Support Notice</div>
                 <div class="notice-desc">Need assistance, seat adjustments, or medical/family logistics support along the route? Touch base directly with the onsite COU Organizing committee members immediately.</div>
@@ -309,32 +304,12 @@
         </main>
 
         <footer>
-            <p>© 2026 Commercial Bank Centralized Operations Unit</p>
-            <p style="color: #cbd5e1; margin-top: 4px;">Together We Celebrate</p>
+            [span_42](start_span)<p>© 2026 Commercial Bank Centralized Operations Unit[span_42](end_span)</p>
+            [span_43](start_span)<p style="color: #cbd5e1; margin-top: 4px;">Together We Celebrate[span_43](end_span)</p>
         </footer>
     </div>
 
-    <!-- CLEAN HIGH-LEGIBILITY INTERACTIONS -->
     <script>
-        function toggleItinerary(selectedDay) {
-            var panel1 = document.getElementById('panel-day1');
-            var panel2 = document.getElementById('panel-day2');
-            var btn1 = document.getElementById('btn-day1');
-            var btn2 = document.getElementById('btn-day2');
-
-            if (selectedDay === 'day1') {
-                panel1.className = "show-panel";
-                panel2.className = "hide-panel";
-                btn1.className = "tab-btn active";
-                btn2.className = "tab-btn";
-            } else {
-                panel1.className = "hide-panel";
-                panel2.className = "show-panel";
-                btn1.className = "tab-btn";
-                btn2.className = "tab-btn active";
-            }
-        }
-
         function initCountdown() {
             var targetDate = new Date("June 27, 2026 08:45:00").getTime();
 
@@ -343,4 +318,11 @@
                 var distance = targetDate - now;
 
                 if (distance < 0) {
-                    document.ge
+                    document.getElementById('days').innerText = "00";
+                    document.getElementById('hours').innerText = "00";
+                    document.getElementById('minutes').innerText = "00";
+                    document.getElementById('seconds').innerText = "00";
+                    return;
+                }
+
+                var d = 
