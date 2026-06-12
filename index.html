@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
     <title>COU Annual Trip 2026 | Commercial Bank</title>
+    <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -72,7 +73,7 @@
         .amber-txt { color: #fbbf24; font-weight: 800; }
         .resort-text { font-size: 14px; color: #cbd5e1; margin-bottom: 15px; font-weight: 600; }
 
-        /* Upgraded Experience Highlights Matrix Dashboard Card */
+        /* Experience Highlights Matrix Dashboard Card */
         .trip-status-box {
             background-color: rgba(15, 23, 42, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.15);
@@ -194,9 +195,19 @@
         .check-item input { width: 18px; height: 18px; margin-top: 1px; accent-color: #0f172a; }
         .check-text { font-size: 12px; font-weight: 600; color: #475569; line-height: 1.4; }
 
+        /* Upgraded Directory Call Cards Layout */
         .notice-card { background: #0f172a; color: #ffffff; border-radius: 20px; padding: 18px; }
-        .notice-title { font-size: 11px; text-transform: uppercase; color: #fbbf24; font-weight: 700; margin-bottom: 6px; }
-        .notice-desc { font-size: 12px; color: #cbd5e1; line-height: 1.5; }
+        .notice-title { font-size: 12px; text-transform: uppercase; color: #fbbf24; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.5px; }
+        .support-link-item {
+            display: flex; align-items: center; justify-content: space-between; 
+            background: rgba(255, 255, 255, 0.07); padding: 10px 12px; border-radius: 12px; 
+            text-decoration: none; color: #ffffff; margin-bottom: 8px; border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .support-link-item:last-child { margin-bottom: 0; }
+        .support-link-item:active { background: rgba(255, 255, 255, 0.15); }
+        .support-left-block { display: flex; align-items: center; gap: 12px; }
+        .support-meta-title { font-size: 13px; font-weight: 700; display: block; }
+        .support-meta-desc { font-size: 10px; color: #cbd5e1; margin-top: 1px; display: block; }
 
         footer { text-align: center; margin-top: 30px; font-size: 11px; color: #94a3b8; font-weight: 500; }
     </style>
@@ -204,11 +215,13 @@
 <body class="notranslate">
 
     <div class="app-container">
+        <!-- HEADER LAYOUT -->
         <header>
             <div class="badge-dept">Commercial Bank · Centralized Operations Unit</div>
             <h1>COU Annual Trip <div class="amber-txt">2026</div></h1>
             <div class="resort-text"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa</div>
 
+            <!-- Upgraded Experience Matrix Highlights Widget Block -->
             <div class="trip-status-box">
                 <div class="status-grid">
                     <div class="status-item">
@@ -245,11 +258,13 @@
         </header>
 
         <main>
+            <!-- WORK MOTTO DESK -->
             <div class="card motto-card">
                 <div class="card-subtitle">Our Journey Together</div>
                 <div class="card-text">"Together we work. Together we celebrate. Together we create memories."</div>
             </div>
 
+            <!-- MAP SEAT CONNECTIONS EXPLICIT LINKS -->
             <div class="maps-grid">
                 <a href="https://maps.google.com/?q=Commercial+Bank+Corporate+Branch+Fort+Colombo" target="_blank" class="map-btn btn-ho">
                     <div class="map-icon"><i class="fa-solid fa-bus"></i></div>
@@ -261,8 +276,10 @@
                 </a>
             </div>
 
+            <!-- INTEGRATED SINGLE STREAM TIMELINE -->
             <div class="card">
                 
+                <!-- DAY 01 TRACK CONTENT -->
                 <div class="day-header">
                     <div>☀️ Day 01</div>
                     <div class="day-header-date">Sat, 27 June</div>
@@ -317,6 +334,7 @@
                     </div>
                 </div>
 
+                <!-- DAY 02 DISPLAY TRACK CONTENT -->
                 <div class="day-header day-two-space">
                     <div>🌴 Day 02</div>
                     <div class="day-header-date">Sun, 28 June</div>
@@ -348,7 +366,7 @@
                         <div class="event-desc">Enjoy one final luxury community meal together before packing buses.</div>
                     </div>
                     <div class="time-block">
-                        <div class="time-dot"></div>
+                        <div class="time-dot" style="background:#d97706;"></div>
                         <div class="time-header-row"><div class="time-txt">02:30 PM – 03:00 PM</div><div class="badge-type" style="background:#fef3c7; color:#78350f;">GO</div></div>
                         <div class="event-title">Departure from Hotel</div>
                         <div class="event-desc">The return journey back to corporate headquarters begins.</div>
@@ -357,26 +375,7 @@
 
             </div>
 
+            <!-- CHECKLIST FIELDS -->
             <div class="card">
                 <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-                    <i class="fa-solid fa-clipboard-check" style="color: #e11d48; font-size: 16px;"></i>
-                    <div class="event-title">Day 02 Departure Checklist</div>
-                </div>
-                <div class="event-desc" style="margin-bottom: 12px;">Tap items to check off your exit tasks smoothly:</div>
-                
-                <div class="check-item">
-                    <input type="checkbox" id="c1">
-                    <label for="c1" class="check-text">Double-check phone chargers & items left in wall outlets</label>
-                </div>
-                <div class="check-item">
-                    <input type="checkbox" id="c2">
-                    <label for="c2" class="check-text">Clear auxiliary personal minibar bills/room orders at Front Desk</label>
-                </div>
-                <div class="check-item">
-                    <input type="checkbox" id="c3">
-                    <label for="c3" class="check-text">Collect family baggage bags and check in with your transport captain</label>
-                </div>
-            </div>
-
-            <div class="notice-card">
-                <div class="notice-title">Trip Support 
+                    
