@@ -13,13 +13,77 @@
         .wrapper { max-width: 450px; margin: 0 auto; background: #f8fafc; min-height: 100vh; }
         
         header {
-            background: linear-gradient(to bottom, rgba(15, 43, 70, 0.75), rgba(26, 74, 117, 0.88)), url('https://cdn.sanity.io/images/ocl5w36p/ihcl_prod/cc5b137db63129a16d9368c44f7f642611a74455-1720x1112.jpg?w=480&auto=format&dpr=2');
-            background-size: cover; background-position: center; color: #fff; text-align: center; padding: 35px 20px; border-radius: 0 0 30px 30px;
+            background: linear-gradient(to bottom, rgba(15, 43, 70, 0.82), rgba(26, 74, 117, 0.92)), url('https://cdn.sanity.io/images/ocl5w36p/ihcl_prod/cc5b137db63129a16d9368c44f7f642611a74455-1720x1112.jpg?w=480&auto=format&dpr=2');
+            background-size: cover; background-position: center; color: #fff; text-align: center; padding: 30px 20px; border-radius: 0 0 30px 30px;
         }
         .tag { display: inline-block; background: rgba(255,255,255,0.15); font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; color: #99f6e4; margin-bottom: 10px; }
         h1 { font-size: 24px; font-weight: 800; }
         .gold { color: #fbbf24; }
         .sub { font-size: 13px; color: #cbd5e1; margin: 5px 0 15px; }
+
+        /* Premium Glassmorphism Countdown Timer */
+        .countdown-container {
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 12px 14px;
+            margin: 15px auto 18px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+        }
+        .countdown-label-top {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #99f6e4;
+            font-weight: 800;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 6px 4px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .countdown-val {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            font-variant-numeric: tabular-nums;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .countdown-unit {
+            font-size: 8px;
+            text-transform: uppercase;
+            color: #cbd5e1;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+        .countdown-live-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.9); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.5; }
+        }
         
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; text-align: left; }
         .box { display: flex; align-items: center; gap: 8px; background: rgba(15,23,42,0.45); padding: 8px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); }
@@ -69,6 +133,32 @@
             <div class="tag">Commercial Bank · COU</div>
             <h1>COU Annual Trip <span class="gold">2026</span></h1>
             <div class="sub"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa</div>
+
+            <!-- Live Countdown Timer Component -->
+            <div class="countdown-container">
+                <div class="countdown-label-top" id="countdown-label">
+                    <span class="countdown-live-dot"></span> Countdown to Adventure
+                </div>
+                <div class="countdown-grid" id="countdown-board">
+                    <div class="countdown-item">
+                        <div class="countdown-val" id="days">00</div>
+                        <div class="countdown-unit">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-val" id="hours">00</div>
+                        <div class="countdown-unit">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-val" id="minutes">00</div>
+                        <div class="countdown-unit">Mins</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-val" id="seconds">00</div>
+                        <div class="countdown-unit">Secs</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="trip-status-box">
                 <div class="grid">
                     <div class="box"><i class="fa-solid fa-calendar-day"></i><div><div class="b-lbl">Duration</div><div class="b-val">2 Days / 1 Night</div></div></div>
@@ -143,5 +233,49 @@
             <div style="margin-top:2px;">Together We Celebrate</div>
         </footer>
     </div>
+
+    <script>
+        // Target Date: Day 1 - Sat, June 27, 2026 at 08:45 AM (Arrival of transport / Start of trip)
+        const targetDate = new Date("June 27, 2026 08:45:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeDifference = targetDate - now;
+
+            const labelEl = document.getElementById("countdown-label");
+            const boardEl = document.getElementById("countdown-board");
+
+            if (timeDifference <= 0) {
+                // If trip has started/passed
+                labelEl.innerHTML = `<span class="countdown-live-dot" style="background-color: #fbbf24;"></span> THE TRIP HAS BEGUN! 🎉`;
+                boardEl.innerHTML = `
+                    <div class="countdown-item" style="grid-column: span 4; background: rgba(251, 191, 36, 0.15); border-color: rgba(251, 191, 36, 0.3);">
+                        <div class="countdown-val" style="color: #fbbf24; font-size: 16px;">We are enjoying Taj Bentota Resort & Spa! 🏖️</div>
+                    </div>
+                `;
+                return;
+            }
+
+            // Calculation units
+            const msInDay = 24 * 60 * 60 * 1000;
+            const msInHour = 60 * 60 * 1000;
+            const msInMinute = 60 * 1000;
+
+            const days = Math.floor(timeDifference / msInDay);
+            const hours = Math.floor((timeDifference % msInDay) / msInHour);
+            const minutes = Math.floor((timeDifference % msInHour) / msInMinute);
+            const seconds = Math.floor((timeDifference % msInMinute) / 1000);
+
+            // Display formatting (pad with leading zero if single digit)
+            document.getElementById("days").innerText = days.toString().padStart(2, "0");
+            document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0");
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
+        }
+
+        // Run immediately on load, then update every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
