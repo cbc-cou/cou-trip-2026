@@ -29,6 +29,16 @@
         .c-val { font-size: 24px; font-weight: 300; color: #ffffff; line-height: 1; }
         .b-lbl { font-size: 8px; color: #fbbf24; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; margin-top: 4px; }
         
+        /* Premium Automated Glympse Tracker UI Widget */
+        .tracker-box { display: none; background: rgba(15, 23, 42, 0.45); border: 1px solid rgba(251, 191, 36, 0.4); border-radius: 16px; padding: 14px 12px; margin-top: 15px; backdrop-filter: blur(12px); text-align: center; }
+        .live-pulse-container { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px; }
+        .pulse-dot { width: 8px; height: 8px; background: #ef4444; border-radius: 50%; box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); animation: pulse 1.6s infinite; }
+        @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); } }
+        .live-lbl { font-size: 10px; font-weight: 800; text-transform: uppercase; color: #f87171; letter-spacing: 1.5px; }
+        .track-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #fbbf24; color: #0f172a; text-decoration: none; padding: 10px 18px; border-radius: 10px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2); }
+        .track-btn i { font-size: 14px; }
+        .track-desc { font-size: 10px; color: #cbd5e1; margin-top: 8px; font-weight: 500; }
+
         /* Premium Mobile Navigation Tabs System */
         .tab-navigation { display: grid; grid-template-columns: repeat(4, 1fr); background: #ffffff; margin: 16px 16px 4px 16px; padding: 4px; border-radius: 14px; border: 1px solid #e2e8f0; }
         .tab-btn { background: none; border: none; padding: 10px 2px; font-size: 11px; font-weight: 700; color: #64748b; border-radius: 10px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s ease; }
@@ -93,13 +103,26 @@
             <h1>COU Annual Trip <span class="gold">2026</span></h1>
             <div class="sub"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa</div>
             
-            <div class="cd">
+            <!-- Countdown Clock Element Wrapper -->
+            <div class="cd" id="countdown-widget">
                 <div class="grid4">
                     <div class="cd-box"><div class="c-val" id="db">00</div><div class="b-lbl">Days</div></div>
                     <div class="cd-box"><div class="c-val" id="hb">00</div><div class="b-lbl">Hours</div></div>
                     <div class="cd-box"><div class="c-val" id="mb">00</div><div class="b-lbl">Mins</div></div>
                     <div class="cd-box"><div class="c-val" id="sb">00</div><div class="b-lbl">Secs</div></div>
                 </div>
+            </div>
+
+            <!-- Fully Integrated Glympse Location Tracker Element Wrapper[cite: 1] -->
+            <div class="tracker-box" id="location-widget">
+                <div class="live-pulse-container">
+                    <div class="pulse-dot"></div>
+                    <div class="live-lbl">Live Journey Tracker</div>
+                </div>
+                <a href="https://glympse.com/!cou_annual_trip_2026" target="_blank" class="track-btn">
+                    <i class="fa-solid fa-map-location-dot"></i> Track Transport Buses
+                </a>
+                <div class="track-desc">Group Tag: !cou_annual_trip_2026 • Tap to track live on Glympse</div>
             </div>
         </header>
 
@@ -408,6 +431,7 @@
         </footer>
     </div>
 
+    <!-- SMART RUNTIME AUTO-TOGGLE NAVIGATION CONTROLLER ENGINE -->
     <script>
         function openSegment(segmentId, element) {
             var contents = document.getElementsByClassName("tab-content");
@@ -420,25 +444,33 @@
 
         (function() {
             var targetDate = new Date("2026-06-27T08:45:00+05:30").getTime();
+            var countdownWidget = document.getElementById('countdown-widget');
+            var locationWidget = document.getElementById('location-widget');
+
             function updateClock() {
                 var now = new Date().getTime();
                 var distance = targetDate - now;
-                if (distance < 0) {
-                    document.getElementById('db').innerText = "00";
-                    document.getElementById('hb').innerText = "00";
-                    document.getElementById('mb').innerText = "00";
-                    document.getElementById('sb').innerText = "00";
+
+                if (distance <= 0) {
+                    countdownWidget.style.display = "none";
+                    locationWidget.style.display = "block";
                     return;
                 }
+
+                countdownWidget.style.display = "block";
+                locationWidget.style.display = "none";
+
                 var d = Math.floor(distance / 86400000);
                 var h = Math.floor((distance % 86400000) / 3600000);
                 var m = Math.floor((distance % 3600000) / 60000);
                 var s = Math.floor((distance % 60000) / 1000);
+
                 document.getElementById('db').innerText = d < 10 ? '0' + d : d;
                 document.getElementById('hb').innerText = h < 10 ? '0' + h : h;
                 document.getElementById('mb').innerText = m < 10 ? '0' + m : m;
                 document.getElementById('sb').innerText = s < 10 ? '0' + s : s;
             }
+
             updateClock();
             setInterval(updateClock, 1000);
         })();
