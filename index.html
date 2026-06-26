@@ -50,8 +50,13 @@
         .route-title { font-size: 11px; font-weight: 800; color: #1e293b; background: #f1f5f9; padding: 6px 12px; border-radius: 8px; margin: 12px 0 6px; text-transform: uppercase; letter-spacing: 0.3px; }
         .data-table { width: 100%; border-collapse: collapse; font-size: 11px; text-align: left; }
         .data-table th { color: #94a3b8; font-weight: 700; text-transform: uppercase; font-size: 8px; padding-bottom: 6px; border-bottom: 1px solid #edf2f7; }
-        .data-table td { padding: 8px 0; border-bottom: 1px solid #f8fafc; color: #334155; vertical-align: top; line-height: 1.4; }
+        .data-table td { padding: 8px 0; border-bottom: 1px solid #f8fafc; color: #334155; vertical-align: middle; line-height: 1.4; }
         .p-point { font-size: 9px; color: #475569; font-weight: 700; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; }
+        
+        /* Clean Stacked Roommate Formatting Styles */
+        .rm-occupant { display: block; position: relative; padding-left: 12px; margin-bottom: 4px; color: #334155; }
+        .rm-occupant::before { content: "•"; position: absolute; left: 2px; color: #64748b; font-weight: bold; }
+        .rm-occupant:last-child { margin-bottom: 0; }
         
         .r-type { font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; display: inline-block; text-align: center; min-width: 55px; }
         .r-double { background: #e0f2fe; color: #0369a1; }
@@ -209,21 +214,124 @@
                     <table class="data-table" style="margin-bottom:18px;">
                         <thead><tr><th>Room Occupants / Staff Roommates</th><th style="text-align:right;">Type</th></tr></thead>
                         <tbody>
-                            <tr><td>Miss K M Kavinya Devindee Kumari / Miss Hiruni Kavindi Alwis Wanigasekara / Miss Ravika Saruni Kothalawala</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
-                            <tr><td>Miss Dulshani Chandipani Palindiya / Miss Hansika Koshila Pramodi Peiris / Miss Kavindi Chamodya Liyanage</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
-                            <tr><td>Miss Dilki Kaushalya / Miss Ishini Kavindi Hemathilake / Miss Ravindi Amarasinghe</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
-                            <tr><td>Miss Shavinki Nimthara Senanayaka / Miss Nethmi Bhagya Senevirathna / Miss Thinushi Jayarangi</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
-                            <tr><td>Miss Ruwangi De Silva / Miss Diandra Silva / Miss Gihini Nimthara Alwis</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
-                            <tr><td>Miss Ananda Harshani Melenika / Miss Ashani Dissanayake / Miss Benashi Tharushika</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
-                            <tr><td>Miss Naveena Vidurangi Alvitigala / Miss Pradeep Nilakshi Navodya / Miss Dulari Christopher</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
-                            <tr><td>Miss Shermila Kariyawasam / Miss Kavisha Jayasekera / Miss Devindi Dedunupitiya</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
-                            <tr><td>Miss Harshani Medawatte / Miss N N S M De Sliva / Miss Bavananthan Theva Harshana</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
-                            <tr><td>Miss Rochelle Taniya Tharsius / Miss W W Rishika Samadya Fernando / Miss Ruwinya Thamadi Abeywansha</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
-                            <tr><td>Mr R A Rathnayaka / Mr D M A A Dilhan / Mr Kalpana Gayashan</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
-                            <tr><td>Mr Azzam Ayubkhan / Mr Nishen Gorokgoda / Mr Kathircamalingam Hethushan</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
-                            <tr><td>Mr Adrian Wickramaratne / Mr Shrimantha Wijesinghe / Mr. Chirath Junior</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
-                            <tr><td>Mr R H Pramitha Hettiarachchi / Mr Isuru Ekanayake</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
-                            <tr><td>Mr Lasith Pushpakumar / Mr W M T A H Perera</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss K M Kavinya Devindee Kumari</div>
+                                    <div class="rm-occupant">Miss Hiruni Kavindi Alwis Wanigasekara</div>
+                                    <div class="rm-occupant">Miss Ravika Saruni Kothalawala</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Dulshani Chandipani Palindiya</div>
+                                    <div class="rm-occupant">Miss Hansika Koshila Pramodi Peiris</div>
+                                    <div class="rm-occupant">Miss Kavindi Chamodya Liyanage</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Dilki Kaushalya</div>
+                                    <div class="rm-occupant">Miss Ishini Kavindi Hemathilake</div>
+                                    <div class="rm-occupant">Miss Ravindi Amarasinghe</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Shavinki Nimthara Senanayaka</div>
+                                    <div class="rm-occupant">Miss Nethmi Bhagya Senevirathna</div>
+                                    <div class="rm-occupant">Miss Thinushi Jayarangi</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Ruwangi De Silva</div>
+                                    <div class="rm-occupant">Miss Diandra Silva</div>
+                                    <div class="rm-occupant">Miss Gihini Nimthara Alwis</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Ananda Harshani Melenika</div>
+                                    <div class="rm-occupant">Miss Ashani Dissanayake</div>
+                                    <div class="rm-occupant">Miss Benashi Tharushika</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Naveena Vidurangi Alvitigala</div>
+                                    <div class="rm-occupant">Miss Pradeep Nilakshi Navodya</div>
+                                    <div class="rm-occupant">Miss Dulari Christopher</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Shermila Kariyawasam</div>
+                                    <div class="rm-occupant">Miss Kavisha Jayasekera</div>
+                                    <div class="rm-occupant">Miss Devindi Dedunupitiya</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Harshani Medawatte</div>
+                                    <div class="rm-occupant">Miss N N S M De Sliva</div>
+                                    <div class="rm-occupant">Miss Bavananthan Theva Harshana</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Rochelle Taniya Tharsius</div>
+                                    <div class="rm-occupant">Miss W W Rishika Samadya Fernando</div>
+                                    <div class="rm-occupant">Miss Ruwinya Thamadi Abeywansha</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Mr R A Rathnayaka</div>
+                                    <div class="rm-occupant">Mr D M A A Dilhan</div>
+                                    <div class="rm-occupant">Mr Kalpana Gayashan</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Mr Azzam Ayubkhan</div>
+                                    <div class="rm-occupant">Mr Nishen Gorokgoda</div>
+                                    <div class="rm-occupant">Mr Kathircamalingam Hethushan</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Mr Adrian Wickramaratne</div>
+                                    <div class="rm-occupant">Mr Shrimantha Wijesinghe</div>
+                                    <div class="rm-occupant">Mr. Chirath Junior</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Mr R H Pramitha Hettiarachchi</div>
+                                    <div class="rm-occupant">Mr Isuru Ekanayake</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-double">Double</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Mr Lasith Pushpakumar</div>
+                                    <div class="rm-occupant">Mr W M T A H Perera</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-double">Double</span></td>
+                            </tr>
                         </tbody>
                     </table>
 
