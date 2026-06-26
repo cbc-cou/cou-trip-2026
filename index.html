@@ -32,8 +32,8 @@
         /* Premium Automated Glympse Tracker UI Widget */
         .tracker-box { display: none; background: rgba(15, 23, 42, 0.45); border: 1px solid rgba(251, 191, 36, 0.4); border-radius: 16px; padding: 14px 12px; margin-top: 15px; backdrop-filter: blur(12px); text-align: center; }
         .live-pulse-container { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px; }
-        .pulse-dot { width: 8px; height: 8px; background: #ef4444; border-radius: 50%; box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); animation: pulse 1.6s infinite; }
-        @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); } }
+        .pulse-dot { width: 8px; height: 8px; background: #ef4444; border-radius: 50%; box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); animation: pulse-glow 1.6s infinite; }
+        @keyframes pulse-glow { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); } }
         .live-lbl { font-size: 10px; font-weight: 800; text-transform: uppercase; color: #f87171; letter-spacing: 1.5px; }
         .track-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #fbbf24; color: #0f172a; text-decoration: none; padding: 10px 18px; border-radius: 10px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2); }
         .track-btn i { font-size: 14px; }
@@ -103,7 +103,6 @@
             <h1>COU Annual Trip <span class="gold">2026</span></h1>
             <div class="sub"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa</div>
             
-            <!-- Countdown Clock Element Wrapper -->
             <div class="cd" id="countdown-widget">
                 <div class="grid4">
                     <div class="cd-box"><div class="c-val" id="db">00</div><div class="b-lbl">Days</div></div>
@@ -113,7 +112,6 @@
                 </div>
             </div>
 
-            <!-- Fully Integrated Glympse Location Tracker Element Wrapper[cite: 1] -->
             <div class="tracker-box" id="location-widget">
                 <div class="live-pulse-container">
                     <div class="pulse-dot"></div>
@@ -236,7 +234,126 @@
                     <div style="font-size:12px; font-weight:800; color:#0f172a; margin-bottom:8px; border-bottom:2px solid #0f172a; padding-bottom:2px;"><i class="fa-solid fa-users" style="color:#2563eb;"></i> 1. Shared Staff Accommodations</div>
                     <table class="data-table" style="margin-bottom:18px;">
                         <thead><tr><th>Room Occupants / Staff Roommates</th><th style="text-align:right;">Type</th></tr></thead>
-                        <tbody>                      
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss K M Kavinya Devindee Kumari</div>
+                                    <div class="rm-occupant">Miss Hiruni Kavindi Alwis Wanigasekara</div>
+                                    <div class="rm-occupant">Miss Ravika Saruni Kothalawala</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Dulshani Chandipani Palindiya</div>
+                                    <div class="rm-occupant">Miss Hansika Koshila Pramodi Peiris</div>
+                                    <div class="rm-occupant">Miss Kavindi Chamodya Liyanage</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Dilki Kaushalya</div>
+                                    <div class="rm-occupant">Miss Ishini Kavindi Hemathilake</div>
+                                    <div class="rm-occupant">Miss Ravindi Amarasinghe</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Shavinki Nimthara Senanayaka</div>
+                                    <div class="rm-occupant">Miss Nethmi Bhagya Senevirathna</div>
+                                    <div class="rm-occupant">Miss Thinushi Jayarangi</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Ruwangi De Silva</div>
+                                    <div class="rm-occupant">Miss Diandra Silva</div>
+                                    <div class="rm-occupant">Miss Dulari Christopher</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Ananda Harshani Melenika</div>
+                                    <div class="rm-occupant">Miss Ashani Dissanayake</div>
+                                    <div class="rm-occupant">Miss Gihini Nimthara Alwis</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Naveena Vidurangi Alvitigala</div>
+                                    <div class="rm-occupant">Miss Pradeep Nilakshi Navodya</div>
+                                    <div class="rm-occupant">Miss Benashi Tharushika</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Shermila Kariyawasam</div>
+                                    <div class="rm-occupant">Miss Kavisha Jayasekera</div>
+                                    <div class="rm-occupant">Miss Devindi Dedunupitiya</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Harshani Medawatte</div>
+                                    <div class="rm-occupant">Miss N N S M De Sliva</div>
+                                    <div class="rm-occupant">Miss Bavananthan Theva Harshana</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Miss Rochelle Taniya Tharsius</div>
+                                    <div class="rm-occupant">Miss W W Rishika Samadya Fernando</div>
+                                    <div class="rm-occupant">Miss Ruwinya Thamadi Abeywansha</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Mr R A Rathnayaka</div>
+                                    <div class="rm-occupant">Mr D M A A Dilhan</div>
+                                    <div class="rm-occupant">Mr Kalpana Gayashan</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Mr Azzam Ayubkhan</div>
+                                    <div class="rm-occupant">Mr Nishen Gorokgoda</div>
+                                    <div class="rm-occupant">Mr Kathircamalingam Hethushan</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Mr Adrian Wickramaratne</div>
+                                    <div class="rm-occupant">Mr Shrimantha Wijesinghe</div>
+                                    <div class="rm-occupant">Mr. Chirath Junior</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-triple">Triple</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Mr R H Pramitha Hettiarachchi</div>
+                                    <div class="rm-occupant">Mr Isuru Ekanayake</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-double">Double</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rm-occupant">Mr Lasith Pushpakumar</div>
+                                    <div class="rm-occupant">Mr W M T A H Perera</div>
+                                </td>
+                                <td style="text-align:right;"><span class="r-type r-double">Double</span></td>
+                            </tr>
+                        </tbody>
                     </table>
 
                     <div style="font-size:12px; font-weight:800; color:#0f172a; margin-bottom:8px; border-bottom:2px solid #fbbf24; padding-bottom:2px;"><i class="fa-solid fa-house-chimney-user" style="color:#d97706;"></i> 2. Family Ensuites & Blocks</div>
@@ -312,7 +429,6 @@
         </footer>
     </div>
 
-    <!-- SMART RUNTIME AUTO-TOGGLE NAVIGATION CONTROLLER ENGINE -->
     <script>
         function openSegment(segmentId, element) {
             var contents = document.getElementsByClassName("tab-content");
