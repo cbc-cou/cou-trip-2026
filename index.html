@@ -7,36 +7,57 @@
     <title>COU Annual Trip 2026</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f8fafc; color: #334155; padding-bottom: 40px; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f8fafc; color: #334155; padding-bottom: 30px; }
         .wrapper { max-width: 450px; margin: 0 auto; background: #f8fafc; min-height: 100vh; }
         
         header {
             background: linear-gradient(to bottom, rgba(15, 43, 70, 0.75), rgba(26, 74, 117, 0.88)), url('https://cdn.sanity.io/images/ocl5w36p/ihcl_prod/cc5b137db63129a16d9368c44f7f642611a74455-1720x1112.jpg?w=480&auto=format&dpr=2');
-            background-size: cover; background-position: center; color: #fff; text-align: center; padding: 35px 20px; border-radius: 0 0 30px 30px;
+            background-size: cover; background-position: center; color: #fff; text-align: center; padding: 30px 20px 25px; border-radius: 0 0 30px 30px;
         }
-        .tag { display: inline-block; background: rgba(255,255,255,0.15); font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; color: #99f6e4; margin-bottom: 10px; }
-        h1 { font-size: 24px; font-weight: 800; }
+        .tag { display: inline-block; background: rgba(255,255,255,0.15); font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; color: #99f6e4; margin-bottom: 8px; }
+        h1 { font-size: 23px; font-weight: 800; }
         .gold { color: #fbbf24; }
-        .sub { font-size: 13px; color: #cbd5e1; margin: 5px 0 15px; }
+        .sub { font-size: 12px; color: #cbd5e1; margin: 4px 0 12px; }
         
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; text-align: left; }
-        .box { display: flex; align-items: center; gap: 8px; background: rgba(15,23,42,0.45); padding: 8px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); }
-        .box i { color: #fbbf24; font-size: 12px; }
-        .b-lbl { font-size: 8px; color: #a1a1aa; text-transform: uppercase; font-weight: 700; }
-        .b-val { font-size: 11px; font-weight: 700; }
+        /* Premium Classy Horological Countdown */
+        .cd { background: rgba(15, 23, 42, 0.35); border-top: 1px solid rgba(255, 255, 255, 0.15); border-bottom: 1px solid rgba(255, 255, 255, 0.15); padding: 12px 10px; margin-top: 15px; backdrop-filter: blur(12px); }
+        .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); }
+        .cd-box { text-align: center; }
+        .cd-box:not(:last-child) { border-right: 1px solid rgba(255, 255, 255, 0.12); }
+        .c-val { font-size: 24px; font-weight: 300; color: #ffffff; line-height: 1; }
+        .b-lbl { font-size: 8px; color: #fbbf24; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; margin-top: 4px; }
         
-        main { padding: 16px; }
-        .card { background: #fff; border-radius: 16px; padding: 16px; margin-bottom: 14px; border: 1px solid #e2e8f0; }
-        .m-card { border-left: 5px solid #fbbf24; font-style: italic; font-size: 14px; }
-        
+        /* Premium Mobile Navigation Tabs System */
+        .tab-navigation { display: grid; grid-template-columns: repeat(4, 1fr); background: #ffffff; margin: 16px 16px 4px 16px; padding: 4px; border-radius: 14px; border: 1px solid #e2e8f0; }
+        .tab-btn { background: none; border: none; padding: 10px 2px; font-size: 11px; font-weight: 700; color: #64748b; border-radius: 10px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s ease; }
+        .tab-btn i { font-size: 13px; }
+        .tab-btn.active { background: #0f172a; color: #ffffff; }
+
+        main { padding: 12px 16px; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .card { background: #fff; border-radius: 16px; padding: 16px; margin-bottom: 14px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.01); }
+        .m-card { border-left: 5px solid #fbbf24; font-style: italic; font-size: 13px; color: #475569; padding: 12px; }
         .lnks { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
         .lnk-btn { background: #fff; border: 1px solid #e2e8f0; padding: 10px; border-radius: 12px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit; }
-        .lnk-btn i { width: 30px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .lnk-btn i { width: 30px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; }
         .b-blue i { background: #eff6ff; color: #2563eb; }
         .b-gold i { background: #fffbeb; color: #d97706; }
         
+        .route-title { font-size: 11px; font-weight: 800; color: #1e293b; background: #f1f5f9; padding: 6px 12px; border-radius: 8px; margin: 12px 0 6px; text-transform: uppercase; letter-spacing: 0.3px; }
+        .data-table { width: 100%; border-collapse: collapse; font-size: 11px; text-align: left; }
+        .data-table th { color: #94a3b8; font-weight: 700; text-transform: uppercase; font-size: 8px; padding-bottom: 6px; border-bottom: 1px solid #edf2f7; }
+        .data-table td { padding: 8px 0; border-bottom: 1px solid #f8fafc; color: #334155; vertical-align: top; line-height: 1.4; }
+        .p-point { font-size: 9px; color: #475569; font-weight: 700; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; }
+        
+        .r-type { font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; display: inline-block; text-align: center; min-width: 55px; }
+        .r-double { background: #e0f2fe; color: #0369a1; }
+        .r-triple { background: #f3e8ff; color: #6b21a8; }
+        .r-single { background: #fef3c7; color: #92400e; }
+
         .d-hd { background: #0f172a; color: #fff; padding: 10px 14px; border-radius: 10px; font-size: 13px; font-weight: 800; display: flex; justify-content: space-between; margin: 15px 0 12px; }
         .tl { border-left: 2px solid #e2e8f0; margin-left: 8px; padding-left: 18px; position: relative; }
         .item { position: relative; margin-bottom: 20px; }
@@ -57,9 +78,6 @@
         .a-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: #dc2626; color: #fff; text-decoration: none; padding: 10px; border-radius: 10px; font-size: 13px; font-weight: 700; box-shadow: 0 4px 6px rgba(220,38,38,0.15); }
         .a-sub { font-size: 9px; color: #7f1d1d; text-align: center; margin-top: 4px; font-weight: 700; }
         
-        .dir { background: #0f172a; color: #fff; border-radius: 16px; padding: 14px; margin-bottom: 14px; }
-        .d-row { display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.06); padding: 8px 12px; border-radius: 10px; text-decoration: none; color: #fff; margin-top: 8px; font-size: 12px; }
-        
         footer { text-align: center; font-size: 10px; color: #94a3b8; margin-top: 20px; }
     </style>
 </head>
@@ -69,73 +87,206 @@
             <div class="tag">Commercial Bank · COU</div>
             <h1>COU Annual Trip <span class="gold">2026</span></h1>
             <div class="sub"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa</div>
-            <div class="trip-status-box">
-                <div class="grid">
-                    <div class="box"><i class="fa-solid fa-calendar-day"></i><div><div class="b-lbl">Duration</div><div class="b-val">2 Days / 1 Night</div></div></div>
-                    <div class="box"><i class="fa-solid fa-umbrella-beach"></i><div><div class="b-lbl">Destination</div><div class="b-val">Bentota Coast</div></div></div>
-                    <div class="box"><i class="fa-solid fa-champagne-glasses"></i><div><div class="b-lbl">Day 1 Focus</div><div class="b-val">DJ Gala Night</div></div></div>
-                    <div class="box"><i class="fa-solid fa-trophy"></i><div><div class="b-lbl">Day 2 Focus</div><div class="b-val">Family Games</div></div></div>
+            
+            <div class="cd">
+                <div class="grid4">
+                    <div class="cd-box"><div class="c-val" id="db">00</div><div class="b-lbl">Days</div></div>
+                    <div class="cd-box"><div class="c-val" id="hb">00</div><div class="b-lbl">Hours</div></div>
+                    <div class="cd-box"><div class="c-val" id="mb">00</div><div class="b-lbl">Mins</div></div>
+                    <div class="cd-box"><div class="c-val" id="sb">00</div><div class="b-lbl">Secs</div></div>
                 </div>
             </div>
         </header>
 
+        <div class="tab-navigation">
+            <button class="tab-btn active" onclick="openSegment('itinerary', this)"><i class="fa-solid fa-calendar-days"></i>Agenda</button>
+            <button class="tab-btn" onclick="openSegment('transport', this)"><i class="fa-solid fa-bus"></i>Buses</button>
+            <button class="tab-btn" onclick="openSegment('rooms', this)"><i class="fa-solid fa-bed"></i>Rooms</button>
+            <button class="tab-btn" onclick="openSegment('helplines', this)"><i class="fa-solid fa-phone-flip"></i>Help</button>
+        </div>
+
         <main>
-            <div class="card m-card">
-                "Together we work. Together we celebrate. Together we create memories."
-            </div>
-
-            <div class="lnks">
-                <a href="https://maps.google.com/?q=Commercial+Bank+Corporate+Branch+Fort" target="_blank" class="lnk-btn b-blue">
-                    <i class="fa-solid fa-bus"></i>
-                    <div><div style="font-size:12px; font-weight:700;">Head Office</div><div style="font-size:9px; color:#94a3b8;">Corporate Branch</div></div>
-                </a>
-                <a href="https://maps.google.com/?q=Taj+Bentota+Resort+Spa" target="_blank" class="lnk-btn b-gold">
-                    <i class="fa-solid fa-map-location-dot"></i>
-                    <div><div style="font-size:12px; font-weight:700;">Taj Bentota</div><div style="font-size:9px; color:#94a3b8;">Tap for Map</div></div>
-                </a>
-            </div>
-
-            <div class="card">
-                <div class="d-hd"><div>☀️ Day 01</div><div>Sat, 27 June</div></div>
-                <div class="tl">
-                    <div class="item"><div class="dot"></div><div class="i-hd"><div>08:45 AM</div><div class="badge">BU</div></div><div class="i-tl">Arrival of Transport</div><div class="i-ds">Buses at Corporate Branch.</div></div>
-                    <div class="item"><div class="dot"></div><div class="i-hd"><div>09:00 AM</div><div class="badge">GO</div></div><div class="i-tl">Departure from Head Office</div><div class="i-ds">The tropical journey begins.</div></div>
-                    <div class="item"><div class="dot"></div><div class="i-hd"><div>11:30 AM</div><div class="badge">FD</div></div><div class="i-tl">Lunch Break En Route</div><div class="i-ds">Refresh and recharge the crew.</div></div>
-                    <div class="item"><div class="dot"></div><div class="i-hd" style="color:#059669;"><div>01:30 PM</div><div class="badge" style="background:#d1fae5; color:#065f46;">HT</div></div><div class="i-tl">Arrival at Taj Bentota</div><div class="i-ds">Welcome to pristine coastal paradise.</div></div>
-                    <div class="item"><div class="dot"></div><div class="i-hd"><div>02:00 PM – 02:30 PM</div><div class="badge">IN</div></div><div class="i-tl">Express Check-in</div><div class="i-ds">Room allocation and settling in.</div></div>
-                    <div class="item"><div class="dot"></div><div class="i-hd" style="color:#06b6d4;"><div>03:00 PM – 05:00 PM</div></div><div class="i-tl">Pool Time & Leisure</div><div class="i-ds">Relax and soak in the atmosphere.</div></div>
-                    <div class="item"><div class="dot"></div><div class="i-hd" style="color:#6366f1;"><div>05:30 PM</div><div class="badge" style="background:#e0e7ff; color:#4338ca;">PT</div></div><div class="i-tl">Group Photo & Evening Tea</div><div class="i-ds">Official unit photograph session with evening tea served.</div></div>
-                    <div class="item hl"><div class="dot"></div><div class="i-hd" style="color:#b45309;"><div>06:00 PM – 12:00 AM</div><div class="badge">Highlight</div></div><div class="i-tl">Annual Night & DJ Party</div><ul class="lst"><li>Welcome Gathering & Soft Music</li><li>Dinner Buffet (7:00 PM - 10:00 PM)</li><li>Dancing & Team Bonding</li></ul></div>
+            <div id="itinerary" class="tab-content active">
+                <div class="card m-card">"Together we work. Together we celebrate. Together we create memories."</div>
+                <div class="lnks">
+                    <a href="https://maps.google.com/?q=Commercial+Bank+Corporate+Branch+Fort" target="_blank" class="lnk-btn b-blue"><i class="fa-solid fa-bus"></i><div><div style="font-size:12px; font-weight:700;">Head Office</div><div style="font-size:9px; color:#94a3b8;">Duke Street</div></div></a>
+                    <a href="https://maps.google.com/?q=Taj+Bentota+Resort+Spa" target="_blank" class="lnk-btn b-gold"><i class="fa-solid fa-map-location-dot"></i><div><div style="font-size:12px; font-weight:700;">Taj Bentota</div><div style="font-size:9px; color:#94a3b8;">Tap for Map</div></div></a>
                 </div>
-
-                <div class="d-hd" style="margin-top:25px;"><div>🌴 Day 02</div><div>Sun, 28 June</div></div>
-                <div class="tl">
-                    <div class="item"><div class="dot"></div><div class="i-hd"><div>07:00 AM – 10:00 AM</div><div class="badge">BR</div></div><div class="i-tl">Breakfast Buffet</div><div class="i-ds">Relaxed morning resort breakfast spread.</div></div>
-                    <div class="item" style="background:#f0fdfa; border:1px solid #ccfbf1; padding:10px; border-radius:10px; margin-left:-6px;"><div class="dot" style="left:-19px; background:#0d9488;"></div><div class="i-hd" style="color:#0f766e;"><div>10:00 AM – 12:00 PM</div><div class="badge" style="background:#ccfbf1; color:#115e59;">FN</div></div><div class="i-tl">Family Fun Morning</div><div class="i-ds" style="color:#115e59;">Team Games, Family Challenges & Prizes.</div></div>
-                    <div class="item"><div class="dot" style="background:#e11d48;"></div><div class="i-hd" style="color:#e11d48;"><div>12:00 PM</div><div class="badge">CO</div></div><div class="i-tl">Hotel Check-out</div><div class="i-ds">Ensure all personal belongings are collected.</div></div>
-                    <div class="item"><div class="dot"></div><div class="i-hd"><div>12:00 PM – 02:30 PM</div><div class="badge">LN</div></div><div class="i-tl">Farewell Lunch</div><div class="i-ds">One final luxury community meal together.</div></div>
-                    <div class="item"><div class="dot"></div><div class="i-hd"><div>02:30 PM – 03:00 PM</div><div class="badge">GO</div></div><div class="i-tl">Departure from Hotel</div><div class="i-ds">Return journey back to corporate headquarters.</div></div>
+                <div class="card">
+                    <div class="d-hd"><div>☀️ Day 01</div><div>Sat, 27 June</div></div>
+                    <div class="tl">
+                        <div class="item"><div class="dot"></div><div class="i-hd"><div>08:45 AM</div><div class="badge">BU</div></div><div class="i-tl">Arrival of Transport</div><div class="i-ds">Buses at Corporate Branch.</div></div>
+                        <div class="item"><div class="dot"></div><div class="i-hd"><div>09:00 AM</div><div class="badge">GO</div></div><div class="i-tl">Departure from Head Office</div><div class="i-ds">The tropical escape begins.</div></div>
+                        <div class="item"><div class="dot"></div><div class="i-hd"><div>11:30 AM</div><div class="badge">FD</div></div><div class="i-tl">Lunch Break En Route</div><div class="i-ds">Refresh and recharge the crew.</div></div>
+                        <div class="item"><div class="dot"></div><div class="i-hd" style="color:#059669;"><div>01:30 PM</div><div class="badge" style="background:#d1fae5; color:#065f46;">HT</div></div><div class="i-tl">Arrival at Taj Bentota</div><div class="i-ds">Welcome to pristine coastal paradise.</div></div>
+                        <div class="item"><div class="dot"></div><div class="i-hd"><div>02:00 PM – 02:30 PM</div><div class="badge">IN</div></div><div class="i-tl">Express Check-in</div><div class="i-ds">Room allocation and settling in.</div></div>
+                        <div class="item"><div class="dot"></div><div class="i-hd" style="color:#06b6d4;"><div>03:00 PM – 05:00 PM</div></div><div class="i-tl">Pool Time & Leisure</div><div class="i-ds">Relax and soak in the atmosphere.</div></div>
+                        <div class="item"><div class="dot"></div><div class="i-hd" style="color:#6366f1;"><div>05:30 PM</div><div class="badge" style="background:#e0e7ff; color:#4338ca;">PT</div></div><div class="i-tl">Group Photo & Evening Tea</div><div class="i-ds">Official unit photograph session with evening tea served.</div></div>
+                        <div class="item hl"><div class="dot"></div><div class="i-hd" style="color:#b45309;"><div>06:00 PM – 12:00 AM</div><div class="badge">Highlight</div></div><div class="i-tl">Annual Night & DJ Party</div><ul class="lst"><li>Welcome Gathering & Soft Music</li><li>Dinner Buffet (7:00 PM - 10:00 PM)</li><li>Dancing & Team Bonding</li></ul></div>
+                    </div>
+                    <div class="d-hd" style="margin-top:25px;"><div>🌴 Day 02</div><div>Sun, 28 June</div></div>
+                    <div class="tl">
+                        <div class="item"><div class="dot"></div><div class="i-hd"><div>07:00 AM – 10:00 AM</div><div class="badge">BR</div></div><div class="i-tl">Breakfast Buffet</div><div class="i-ds">Relaxed morning resort breakfast spread.</div></div>
+                        <div class="item" style="background:#f0fdfa; border:1px solid #ccfbf1; padding:10px; border-radius:10px; margin-left:-6px;"><div class="dot" style="left:-19px; background:#0d9488;"></div><div class="i-hd" style="color:#0f766e;"><div>10:00 AM – 12:00 PM</div><div class="badge" style="background:#ccfbf1; color:#115e59;">FN</div></div><div class="i-tl">Family Fun Morning</div><div class="i-ds">Team Games, Family Challenges & Prizes.</div></div>
+                        <div class="item"><div class="dot"></div><div class="i-hd" style="color:#e11d48;"><div>12:00 PM</div><div class="badge">CO</div></div><div class="i-tl">Hotel Check-out</div><div class="i-ds">Ensure all personal belongings are collected.</div></div>
+                        <div class="item"><div class="dot"></div><div class="i-hd"><div>12:00 PM – 02:30 PM</div><div class="badge">LN</div></div><div class="i-tl">Farewell Lunch</div><div class="i-ds">One final luxury community meal together.</div></div>
+                        <div class="item"><div class="dot"></div><div class="i-hd"><div>02:30 PM – 03:00 PM</div><div class="badge">GO</div></div><div class="i-tl">Departure from Hotel</div><div class="i-ds">Return journey back to headquarters.</div></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div style="display:flex; align-items:center; gap:6px; margin-bottom:6px;"><i class="fa-solid fa-clipboard-check" style="color:#e11d48;"></i><div class="i-tl">Day 02 Departure Checklist</div></div>
-                <div class="chk"><input type="checkbox" id="k1"><label for="k1">Double-check wall outlets for phone chargers</label></div>
-                <div class="chk"><input type="checkbox" id="k2"><label for="k2">Clear auxiliary room bills at Front Desk</label></div>
-                <div class="chk"><input type="checkbox" id="k3"><label for="k3">Collect family baggage bags and check in</label></div>
+            <div id="transport" class="tab-content">
+                <div class="card" style="padding: 12px 14px;">
+                    <div class="route-title">🚌 Bus A Route Plan (Ja Ela → Wattala → HO → Dehiwela → Panadura)</div>
+                    <table class="data-table">
+                        <thead><tr><th>Passenger Name</th><th style="text-align:right;">Hub</th></tr></thead>
+                        <tbody>
+                            <tr><td>Mr K P A Koralagama</td><td style="text-align:right;"><span class="p-point">Ja Ela</span></td></tr>
+                            <tr><td>Mr D M A A Dilhan</td><td style="text-align:right;"><span class="p-point">Wattala</span></td></tr>
+                            <tr><td>Mr Aloka Perera</td><td style="text-align:right;"><span class="p-point">Wattala</span></td></tr>
+                            <tr><td>Mr Thushan Silva</td><td style="text-align:right;"><span class="p-point">Wattala</span></td></tr>
+                            <tr><td>Miss. Bavanthan Theva Harshana</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Miss. Dulari Christopher</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Miss. Ravindi Chirantha Amarasinghe</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Miss. M A Thinushi Jayarangi</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Miss. Shermila Kariyawasam</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Miss. Devindi Dedunupitiya</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Miss. Kavisha Jayasekera</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Miss. Gihini Nimthara</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Miss. Nethmi Bhagya</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Miss. Shavinki Senanayaka</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Miss. Ananda H Melenika</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Miss. Ashani Dissanayake</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Mrs. Umasha Silva</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Miss. Nilakshi Navodya</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Mrs Sonali Goonasekera</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Mrs. Ruwangi De Silva</td><td style="text-align:right;"><span class="p-point">Dehiwela</span></td></tr>
+                            <tr><td>Miss. Ishini Kavindi Hemathilake</td><td style="text-align:right;"><span class="p-point">Dehiwela</span></td></tr>
+                            <tr><td>Miss. Hiruni Kavindi</td><td style="text-align:right;"><span class="p-point">Dehiwela</span></td></tr>
+                            <tr><td>Mr Imesh Jayasinghe</td><td style="text-align:right;"><span class="p-point">Panadura</span></td></tr>
+                            <tr><td>Mrs. Oshadhi Indeewari</td><td style="text-align:right;"><span class="p-point">Panadura</span></td></tr>
+                            <tr><td>Miss. D A B Tharushika</td><td style="text-align:right;"><span class="p-point">Panadura</span></td></tr>
+                            <tr><td>Miss. Naveena Vidurangi Alvitigala</td><td style="text-align:right;"><span class="p-point">Panadura</span></td></tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="route-title" style="margin-top:16px;">🚌 Bus B Route Plan (Ja Ela → HO → Moratuwa)</div>
+                    <table class="data-table">
+                        <thead><tr><th>Passenger Name</th><th style="text-align:right;">Hub</th></tr></thead>
+                        <tbody>
+                            <tr><td>Mr. Tharaka Fernando</td><td style="text-align:right;"><span class="p-point">Ja Ela</span></td></tr>
+                            <tr><td>Mr. Thisura Jayasinghe</td><td style="text-align:right;"><span class="p-point">Ja Ela</span></td></tr>
+                            <tr><td>Mr Shrimantha Wijesinghe</td><td style="text-align:right;"><span class="p-point">Ja Ela</span></td></tr>
+                            <tr><td>Mr Rushitha Nonis</td><td style="text-align:right;"><span class="p-point">Ja Ela</span></td></tr>
+                            <tr><td>Mr Malaka premathilake</td><td style="text-align:right;"><span class="p-point">Ja Ela</span></td></tr>
+                            <tr><td>Mr. Eranga De Mel</td><td style="text-align:right;"><span class="p-point">Ja Ela</span></td></tr>
+                            <tr><td>Mr Kalpana Gayashan</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Miss. Ravindu Adithya</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Mr. Lasith pushpakumara</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Mr. Tishan Perera</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Mr Kathircamalingam Hethushan</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Miss. Rochelle Taniya Tharsius</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Mr Adrian Wickramaratne</td><td style="text-align:right;"><span class="p-point">Head Office</span></td></tr>
+                            <tr><td>Mr Azzam Ayubkhan</td><td style="text-align:right;"><span class="p-point">Moratuwa</span></td></tr>
+                            <tr><td>Mr Nishen Gorokgoda</td><td style="text-align:right;"><span class="p-point">Moratuwa</span></td></tr>
+                            <tr><td>Mrs. Iresha Perera</td><td style="text-align:right;"><span class="p-point">Moratuwa</span></td></tr>
+                            <tr><td>Mrs. Ruwinya Abeywansha</td><td style="text-align:right;"><span class="p-point">Moratuwa</span></td></tr>
+                            <tr><td>Mrs. Harshani Medawatte</td><td style="text-align:right;"><span class="p-point">Moratuwa</span></td></tr>
+                            <tr><td>Miss. N Nethmi Sameesha</td><td style="text-align:right;"><span class="p-point">Moratuwa</span></td></tr>
+                            <tr><td>Miss. Diandra De Silva</td><td style="text-align:right;"><span class="p-point">Moratuwa</span></td></tr>
+                            <tr><td>Miss. Rishika Fernando</td><td style="text-align:right;"><span class="p-point">Moratuwa</span></td></tr>
+                            <tr><td>Mr. Nimesh Perera</td><td style="text-align:right;"><span class="p-point">Moratuwa</span></td></tr>
+                            <tr><td>Miss. Dilki Kaushalya</td><td style="text-align:right;"><span class="p-point">Moratuwa</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <div class="dir">
-                <div style="font-size:11px; text-transform:uppercase; color:#fbbf24; font-weight:700; margin-bottom:6px;">Service Helplines</div>
-                <a href="tel:0342275000" class="d-row"><div><strong>Taj Bentota Reception</strong><div style="font-size:9px; color:#cbd5e1; margin-top:2px;">Hotel operator front desk desk</div></div><i class="fa-solid fa-chevron-right"></i></a>
-                <a href="tel:0775984409" class="d-row"><div><strong>On-Route Logistics Help</strong><div style="font-size:9px; color:#cbd5e1; margin-top:2px;">First-aid box & bus allocations</div></div><i class="fa-solid fa-chevron-right"></i></a>
+            <div id="rooms" class="tab-content">
+                <div class="card" style="padding: 12px 14px;">
+                    
+                    <div style="font-size:12px; font-weight:800; color:#0f172a; margin-bottom:8px; border-bottom:2px solid #0f172a; padding-bottom:2px;"><i class="fa-solid fa-users" style="color:#2563eb;"></i> 1. Shared Staff Accommodations</div>
+                    <table class="data-table" style="margin-bottom:18px;">
+                        <thead><tr><th>Room Occupants / Staff Roommates</th><th style="text-align:right;">Type</th></tr></thead>
+                        <tbody>
+                            <tr><td>Miss K M Kavinya Devindee Kumari / Miss Hiruni Kavindi Alwis Wanigasekara / Miss Ravika Saruni Kothalawala</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Miss Dulshani Chandipani Palindiya / Miss Hansika Koshila Pramodi Peiris / Miss Kavindi Chamodya Liyanage</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Miss Dilki Kaushalya / Miss Ishini Kavindi Hemathilake / Miss Ravindi Amarasinghe</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Miss Shavinki Nimthara Senanayaka / Miss Nethmi Bhagya Senevirathna / Miss Thinushi Jayarangi</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Miss Ruwangi De Silva / Miss Diandra Silva / Miss Gihini Nimthara Alwis</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Miss Ananda Harshani Melenika / Miss Ashani Dissanayake / Miss Benashi Tharushika</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Miss Naveena Vidurangi Alvitigala / Miss Pradeep Nilakshi Navodya / Miss Dulari Christopher</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Miss Shermila Kariyawasam / Miss Kavisha Jayasekera / Miss Devindi Dedunupitiya</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Miss Harshani Medawatte / Miss N N S M De Sliva / Miss Bavananthan Theva Harshana</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Miss Rochelle Taniya Tharsius / Miss W W Rishika Samadya Fernando / Miss Ruwinya Thamadi Abeywansha</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Mr R A Rathnayaka / Mr D M A A Dilhan / Mr Kalpana Gayashan</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Mr Assam Ayubkhan / Mr Nishen Gorokgoda / Mr Kathircamalingam Hethushan</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Mr Adrian Wickramaratne / Mr Shrimantha Wijesinghe / Mr. Chirath Junior</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Mr R H Pramitha Hettiarachchi / Mr Isuru Ekanayake</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                            <tr><td>Mr Lasith Pushpakumar / Mr W M T A H Perera</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                        </tbody>
+                    </table>
+
+                    <div style="font-size:12px; font-weight:800; color:#0f172a; margin-bottom:8px; border-bottom:2px solid #fbbf24; padding-bottom:2px;"><i class="fa-solid fa-house-chimney-user" style="color:#d97706;"></i> 2. Family Ensuites & Blocks</div>
+                    <table class="data-table" style="margin-bottom:18px;">
+                        <thead><tr><th>Primary Employee & Accompanying Family</th><th style="text-align:right;">Type</th></tr></thead>
+                        <tbody>
+                            <tr><td>Mr Dhammika Chirath Pathirana & Family</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Mrs Nadeesha Ekanayake & Family</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Mr De Mel W L Eranga & Family</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Mr Sidath Samarawickrama & Family</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Mr Prasanna Muthuwela & Family</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Mr Wasantha Nawarathna & Family</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Mr G H C I Jayaratne & Family</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Mr A M T N Chandrasekara & Family</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Mr K P A Koralagama & Family</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Mr Malaka premathilake & Family</td><td style="text-align:right;"><span class="r-type r-triple">Triple</span></td></tr>
+                            <tr><td>Mrs A M K N Adikari & Family</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                            <tr><td>Mrs Ruvini Udeshika Navaratne & Family</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                            <tr><td>Mr Aloka Perera & Family</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                            <tr><td>Mr Don Dilshan Kithmina Kirieldeniya & Family</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                            <tr><td>Mr M M M F ABEYKOON & Family</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                            <tr><td>Mr Rushitha Nonis & Family</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                            <tr><td>Mr Thushan Silva & Family</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                            <tr><td>Mr Chaminda Kokila Jayaweera & Family</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                            <tr><td>Mr Rukshan & Family</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                            <tr><td>Mr Tharaka Fernando & Family</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                            <tr><td>Mr Imesh Jayasinghe & Family</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                            <tr><td>Mrs Umasha Silva & Family</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                            <tr><td>Mrs Iresha & Family</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                            <tr><td>Mr Thisura Jayasinghe & Family</td><td style="text-align:right;"><span class="r-type r-double">Double</span></td></tr>
+                        </tbody>
+                    </table>
+
+                    <div style="font-size:12px; font-weight:800; color:#0f172a; margin-bottom:8px; border-bottom:2px solid #ef4444; padding-bottom:2px;"><i class="fa-solid fa-user-lock" style="color:#dc2626;"></i> 3. Private Single Rooms</div>
+                    <table class="data-table">
+                        <thead><tr><th>Employee Occupant Name</th><th style="text-align:right;">Type</th></tr></thead>
+                        <tbody>
+                            <tr><td>Mrs Oshadhi Subasinghe</td><td style="text-align:right;"><span class="r-type r-single">Single</span></td></tr>
+                            <tr><td>Mrs Sonali Goonasekera</td><td style="text-align:right;"><span class="r-type r-single">Single</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <div class="card alert">
-                <div class="a-title"><i class="fa-solid fa-circle-exclamation"></i> IN CASE OF EMERGENCY</div>
-                <div class="i-ds" style="margin-bottom:10px; font-weight:500; color:#4b5563;">For urgent medical needs, delays, or immediate support:</div>
-                <a href="tel:+94777488137" class="a-btn"><i class="fa-solid fa-phone-flip"></i> Call Malaka Premathilake</a>
-                <div class="a-sub">President - Sports Club</div>
+            <div id="helplines" class="tab-content">
+                <div class="card">
+                    <div style="display:flex; align-items:center; gap:6px; margin-bottom:6px;"><i class="fa-solid fa-clipboard-check" style="color:#e11d48;"></i><div class="i-tl">Day 02 Departure Checklist</div></div>
+                    <div class="chk"><input type="checkbox" id="k1"><label for="k1">Double-check wall outlets for phone chargers</label></div>
+                    <div class="chk"><input type="checkbox" id="k2"><label for="k2">Clear auxiliary room bills at Front Desk</label></div>
+                    <div class="chk"><input type="checkbox" id="k3"><label for="k3">Collect family baggage bags and check in</label></div>
+                </div>
+                <div class="dir">
+                    <div style="font-size:11px; text-transform:uppercase; color:#fbbf24; font-weight:700; margin-bottom:6px;">Service Helplines</div>
+                    <a href="tel:0342275000" class="d-row"><div><strong>Taj Bentota Reception</strong><div style="font-size:9px; color:#cbd5e1; margin-top:2px;">Hotel operator front desk desk</div></div><i class="fa-solid fa-chevron-right"></i></a>
+                    <a href="tel:0775984409" class="d-row"><div><strong>On-Route Logistics Help</strong><div style="font-size:9px; color:#cbd5e1; margin-top:2px;">First-aid box & bus allocations</div></div><i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+                <div class="card alert">
+                    <div class="a-title"><i class="fa-solid fa-circle-exclamation"></i> IN CASE OF EMERGENCY</div>
+                    <div class="i-ds" style="margin-bottom:10px; font-weight:500; color:#4b5563;">For urgent medical needs, delays, or immediate support:</div>
+                    <a href="tel:+94777488137" class="a-btn"><i class="fa-solid fa-phone-flip"></i> Call Malaka Premathilake</a>
+                    <div class="a-sub">President - Sports Club</div>
+                </div>
             </div>
         </main>
 
@@ -144,5 +295,41 @@
             <div style="margin-top:2px;">Together We Celebrate</div>
         </footer>
     </div>
+
+    <script>
+        function openSegment(segmentId, element) {
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) { contents[i].className = "tab-content"; }
+            var buttons = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < buttons.length; i++) { buttons[i].className = "tab-btn"; }
+            document.getElementById(segmentId).className = "tab-content active";
+            element.className = "tab-btn active";
+        }
+
+        (function() {
+            var targetDate = new Date("2026-06-27T08:45:00+05:30").getTime();
+            function updateClock() {
+                var now = new Date().getTime();
+                var distance = targetDate - now;
+                if (distance < 0) {
+                    document.getElementById('db').innerText = "00";
+                    document.getElementById('hb').innerText = "00";
+                    document.getElementById('mb').innerText = "00";
+                    document.getElementById('sb').innerText = "00";
+                    return;
+                }
+                var d = Math.floor(distance / 86400000);
+                var h = Math.floor((distance % 86400000) / 3600000);
+                var m = Math.floor((distance % 3600000) / 60000);
+                var s = Math.floor((distance % 60000) / 1000);
+                document.getElementById('db').innerText = d < 10 ? '0' + d : d;
+                document.getElementById('hb').innerText = h < 10 ? '0' + h : h;
+                document.getElementById('mb').innerText = m < 10 ? '0' + m : m;
+                document.getElementById('sb').innerText = s < 10 ? '0' + s : s;
+            }
+            updateClock();
+            setInterval(updateClock, 1000);
+        })();
+    </script>
 </body>
 </html>
