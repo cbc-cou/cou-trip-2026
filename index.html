@@ -93,6 +93,20 @@
         .a-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: #dc2626; color: #fff; text-decoration: none; padding: 10px; border-radius: 10px; font-size: 13px; font-weight: 700; box-shadow: 0 4px 6px rgba(220,38,38,0.15); }
         .a-sub { font-size: 9px; color: #7f1d1d; text-align: center; margin-top: 4px; font-weight: 700; }
         
+        /* Premium Slick Helpline Architecture Styles */
+        .sec-title { font-size: 12px; text-transform: uppercase; color: #0f172a; font-weight: 800; letter-spacing: 0.5px; margin: 18px 0 10px; display: flex; align-items: center; gap: 8px; }
+        .hl-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+        .hl-item { display: flex; align-items: center; justify-content: space-between; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px; text-decoration: none; color: inherit; transition: all 0.2s ease; }
+        .hl-item:active { transform: scale(0.98); background: #f8fafc; }
+        .hl-left { display: flex; align-items: center; gap: 12px; }
+        .hl-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+        .hl-icon.hotel { background: #fffbeb; color: #d97706; }
+        .hl-icon.logistics { background: #eff6ff; color: #2563eb; }
+        .hl-meta { display: flex; flex-direction: column; }
+        .hl-name { font-size: 12px; font-weight: 700; color: #0f172a; }
+        .hl-desc { font-size: 10px; color: #64748b; margin-top: 1px; }
+        .hl-call { width: 28px; height: 28px; border-radius: 50%; background: #f1f5f9; color: #475569; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+
         footer { text-align: center; font-size: 10px; color: #94a3b8; margin-top: 20px; }
     </style>
 </head>
@@ -103,6 +117,7 @@
             <h1>COU Annual Trip <span class="gold">2026</span></h1>
             <div class="sub"><i class="fa-solid fa-hotel"></i> Taj Bentota Resort & Spa</div>
             
+            <!-- Countdown Clock Element Wrapper -->
             <div class="cd" id="countdown-widget">
                 <div class="grid4">
                     <div class="cd-box"><div class="c-val" id="db">00</div><div class="b-lbl">Days</div></div>
@@ -112,6 +127,7 @@
                 </div>
             </div>
 
+            <!-- Fully Integrated Glympse Location Tracker Element Wrapper -->
             <div class="tracker-box" id="location-widget">
                 <div class="live-pulse-container">
                     <div class="pulse-dot"></div>
@@ -409,11 +425,31 @@
                     <div class="chk"><input type="checkbox" id="k2"><label for="k2">Clear auxiliary room bills at Front Desk</label></div>
                     <div class="chk"><input type="checkbox" id="k3"><label for="k3">Collect family baggage bags and check in</label></div>
                 </div>
-                <div class="dir">
-                    <div style="font-size:11px; text-transform:uppercase; color:#fbbf24; font-weight:700; margin-bottom:6px;">Service Helplines</div>
-                    <a href="tel:0342275000" class="d-row"><div><strong>Taj Bentota Reception</strong><div style="font-size:9px; color:#cbd5e1; margin-top:2px;">Hotel operator front desk desk</div></div><i class="fa-solid fa-chevron-right"></i></a>
-                    <a href="tel:0775984409" class="d-row"><div><strong>On-Route Logistics Help</strong><div style="font-size:9px; color:#cbd5e1; margin-top:2px;">First-aid box & bus allocations</div></div><i class="fa-solid fa-chevron-right"></i></a>
+                
+                <div class="sec-title"><i class="fa-solid fa-headset" style="color:#2563eb;"></i> Emergency Service Support</div>
+                <div class="hl-list">
+                    <a href="tel:0342275000" class="hl-item">
+                        <div class="hl-left">
+                            <div class="hl-icon hotel"><i class="fa-solid fa-hotel"></i></div>
+                            <div class="hl-meta">
+                                <span class="hl-name">Taj Bentota Desk</span>
+                                <span class="hl-desc">Resort front desk operations</span>
+                            </div>
+                        </div>
+                        <div class="hl-call"><i class="fa-solid fa-phone"></i></div>
+                    </a>
+                    <a href="tel:0768300754" class="hl-item">
+                        <div class="hl-left">
+                            <div class="hl-icon logistics"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                            <div class="hl-meta">
+                                <span class="hl-name">On-Route Logistics</span>
+                                <span class="hl-desc">First-aid box & transit hubs</span>
+                            </div>
+                        </div>
+                        <div class="hl-call"><i class="fa-solid fa-phone"></i></div>
+                    </a>
                 </div>
+
                 <div class="card alert">
                     <div class="a-title"><i class="fa-solid fa-circle-exclamation"></i> IN CASE OF EMERGENCY</div>
                     <div class="i-ds" style="margin-bottom:10px; font-weight:500; color:#4b5563;">For urgent medical needs, delays, or immediate support:</div>
